@@ -1,0 +1,179 @@
+import 'package:flutter/material.dart';
+import 'package:vida_leve/utils/appbar.dart';
+import 'package:vida_leve/utils/drawer.dart';
+import 'package:vida_leve/pages/pacientes.dart';
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        endDrawer: MyDrawer(),
+        appBar: MyAppBar(),
+        body: Center(
+            child: Column(
+          children: [
+            Expanded(
+              child: Container(
+                color: Colors.white,
+                child: Column(
+                  children: [
+                    const Flexible(
+                      flex: 1,
+                      child: SizedBox(height: 32.0),
+                    ),
+                    const SizedBox(height: 32.0),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          const Text(
+                            'Agenda',
+                            style: TextStyle(
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Montserrat',
+                            ),
+                          ),
+                          const Spacer(),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: const Color.fromRGBO(0, 168, 150, 100)),
+                            child: IconButton(
+                              icon: const Icon(Icons.add),
+                              iconSize: 30,
+                              color: Colors.white,
+                              onPressed: () {
+                                // Função a ser executada quando o ícone for clicado
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                        height:
+                            16.0), // Espaço entre os cards e a margem inferior
+                    Container(
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(16.0),
+                          bottomLeft: Radius.circular(16.0),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8.0, vertical: 16.0),
+                        child: SizedBox(
+                          height: 150.0,
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 5,
+                            itemBuilder: (BuildContext context, int index) {
+                              return Container(
+                                width: 105.0, // diminui a largura do card
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 8.0),
+                                decoration: BoxDecoration(
+                                  color:
+                                      index % 2 == 0 ? Colors.red : Colors.blue,
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  border: Border.all(
+                                    color: Colors.black,
+                                    width: 2.0,
+                                  ),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Título do Card ${index + 1}',
+                                        style: const TextStyle(
+                                          fontSize: 16.0,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      const SizedBox(height: 8.0),
+                                      Text(
+                                        'Descrição do Card ${index + 1}',
+                                        style: const TextStyle(
+                                          fontSize: 12.0,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                //color: Colors.white,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'Pacientes',
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Montserrat',
+                      ),
+                    ),
+                    const SizedBox(height: 30.0),
+                    ElevatedButton(
+                      onPressed: () {
+                        print('pacientes');
+                        Navigator.pushReplacementNamed(context, "/pacientes");
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 32.0, vertical: 16.0),
+                        textStyle: const TextStyle(fontSize: 20.0),
+                      ),
+                      child: const Text(
+                        'Pacientes',
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        )));
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//appBar: AppBar(
+        //backgroundColor: const Color.fromRGBO(0, 168, 150, 100),
+        //title: const Text('Home Page'),
+        //leading: const CircleAvatar(
+          //radius: 10000,
+          //backgroundColor: Color.fromRGBO(0, 168, 150, 0),
+          //backgroundImage: AssetImage('images/logo_vidaleve.png'),
+        //),
+      //),
