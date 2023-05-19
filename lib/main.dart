@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vida_leve/pages/cadastro_pacientes.dart';
 import 'package:vida_leve/pages/login_page.dart';
 import 'package:vida_leve/pages/pacientes.dart';
 
@@ -21,11 +22,12 @@ class MyApp extends StatelessWidget {
           colorScheme: telaPrincipal.colorScheme.copyWith(
               primary: const Color.fromRGBO(0, 168, 150, 100),
               secondary: const Color.fromRGBO(2, 128, 144, 100))),
-      initialRoute: "/home",
+      initialRoute: "/cadastro_pacientes",
       routes: {
         "/login": (context) => LoginPage(),
         "/home": (context) => HomePage(),
         "/pacientes": (context) => Pacientes(),
+        "/cadastro_pacientes": (context) => CadastroPacientes(),
       },
     );
   }
