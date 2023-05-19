@@ -65,15 +65,21 @@ class CadastroPacientes extends StatelessWidget {
                       padding: const EdgeInsets.all(6.0),
                       child: TextFormField(
                         decoration: InputDecoration(
-                            floatingLabelBehavior:
-                                FloatingLabelBehavior.always,
-                            labelText: "Nome",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          labelText: "Nome",
+                          labelStyle: TextStyle(color: Color(0xFF00A896)),
+                          fillColor: Colors.white,
+                          filled: true,
+                          enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10))),
+                              borderRadius: BorderRadius.circular(10)),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color(0xFF00A896), width: 2.0),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          focusColor: Colors.white,
+                        ),
                       ),
                     ),
                     Row(
@@ -81,20 +87,29 @@ class CadastroPacientes extends StatelessWidget {
                         Expanded(
                           flex: 3,
                           child: Padding(
-                            padding: const EdgeInsets.all(6.0),
-                            child: TextFormField(
-                              decoration: InputDecoration(
+                              padding: const EdgeInsets.all(6.0),
+                              child: TextFormField(
+                                decoration: InputDecoration(
                                   floatingLabelBehavior:
                                       FloatingLabelBehavior.always,
                                   labelText: "Nascimento",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10))),
-                            ),
-                          ),
+                                  labelStyle:
+                                      TextStyle(color: Color(0xFF00A896)),
+                                  fillColor: Colors.white,
+                                  filled: true,
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Color(0xFF00A896)),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color: Color(0xFF00A896), width: 2.0),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  focusColor: Colors.white,
+                                ),
+                              )),
                         ),
                         Expanded(
                           flex: 1,
@@ -102,15 +117,23 @@ class CadastroPacientes extends StatelessWidget {
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
                               decoration: InputDecoration(
-                                  floatingLabelBehavior:
-                                      FloatingLabelBehavior.always,
-                                  labelText: "Idade",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10))),
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.always,
+                                labelText: "Idade",
+                                labelStyle: TextStyle(color: Color(0xFF00A896)),
+                                fillColor: Colors.white,
+                                filled: true,
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Color(0xFF00A896)),
+                                    borderRadius: BorderRadius.circular(10)),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Color(0xFF00A896), width: 2.0),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusColor: Colors.white,
+                              ),
                             ),
                           ),
                         ),
@@ -124,15 +147,23 @@ class CadastroPacientes extends StatelessWidget {
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
                               decoration: InputDecoration(
-                                  floatingLabelBehavior:
-                                      FloatingLabelBehavior.always,
-                                  labelText: "Naturalidade",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10))),
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.always,
+                                labelText: "Naturalidade",
+                                labelStyle: TextStyle(color: Color(0xFF00A896)),
+                                fillColor: Colors.white,
+                                filled: true,
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Color(0xFF00A896)),
+                                    borderRadius: BorderRadius.circular(10)),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Color(0xFF00A896), width: 2.0),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusColor: Colors.white,
+                              ),
                             ),
                           ),
                         ),
@@ -142,15 +173,23 @@ class CadastroPacientes extends StatelessWidget {
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
                               decoration: InputDecoration(
-                                  floatingLabelBehavior:
-                                      FloatingLabelBehavior.always,
-                                  labelText: "Genero",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10))),
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.always,
+                                labelText: "Genero",
+                                labelStyle: TextStyle(color: Color(0xFF00A896)),
+                                fillColor: Colors.white,
+                                filled: true,
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Color(0xFF00A896)),
+                                    borderRadius: BorderRadius.circular(10)),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Color(0xFF00A896), width: 2.0),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusColor: Colors.white,
+                              ),
                             ),
                           ),
                         ),
@@ -164,15 +203,23 @@ class CadastroPacientes extends StatelessWidget {
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
                               decoration: InputDecoration(
-                                  floatingLabelBehavior:
-                                      FloatingLabelBehavior.always,
-                                  labelText: "Etnia",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10))),
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.always,
+                                labelText: "Etnia",
+                                labelStyle: TextStyle(color: Color(0xFF00A896)),
+                                fillColor: Colors.white,
+                                filled: true,
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Color(0xFF00A896)),
+                                    borderRadius: BorderRadius.circular(10)),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Color(0xFF00A896), width: 2.0),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusColor: Colors.white,
+                              ),
                             ),
                           ),
                         ),
@@ -182,15 +229,23 @@ class CadastroPacientes extends StatelessWidget {
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
                               decoration: InputDecoration(
-                                  floatingLabelBehavior:
-                                      FloatingLabelBehavior.always,
-                                  labelText: "Altura",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10))),
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.always,
+                                labelText: "Altura",
+                                labelStyle: TextStyle(color: Color(0xFF00A896)),
+                                fillColor: Colors.white,
+                                filled: true,
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Color(0xFF00A896)),
+                                    borderRadius: BorderRadius.circular(10)),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Color(0xFF00A896), width: 2.0),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusColor: Colors.white,
+                              ),
                             ),
                           ),
                         ),
@@ -200,15 +255,23 @@ class CadastroPacientes extends StatelessWidget {
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
                               decoration: InputDecoration(
-                                  floatingLabelBehavior:
-                                      FloatingLabelBehavior.always,
-                                  labelText: "Peso",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10))),
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.always,
+                                labelText: "Peso",
+                                labelStyle: TextStyle(color: Color(0xFF00A896)),
+                                fillColor: Colors.white,
+                                filled: true,
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Color(0xFF00A896)),
+                                    borderRadius: BorderRadius.circular(10)),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Color(0xFF00A896), width: 2.0),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusColor: Colors.white,
+                              ),
                             ),
                           ),
                         ),
@@ -222,15 +285,23 @@ class CadastroPacientes extends StatelessWidget {
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
                               decoration: InputDecoration(
-                                  floatingLabelBehavior:
-                                      FloatingLabelBehavior.always,
-                                  labelText: "Religião",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10))),
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.always,
+                                labelText: "Religião",
+                                labelStyle: TextStyle(color: Color(0xFF00A896)),
+                                fillColor: Colors.white,
+                                filled: true,
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Color(0xFF00A896)),
+                                    borderRadius: BorderRadius.circular(10)),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Color(0xFF00A896), width: 2.0),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusColor: Colors.white,
+                              ),
                             ),
                           ),
                         ),
@@ -240,15 +311,23 @@ class CadastroPacientes extends StatelessWidget {
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
                               decoration: InputDecoration(
-                                  floatingLabelBehavior:
-                                      FloatingLabelBehavior.always,
-                                  labelText: "Estado Civil",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10))),
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.always,
+                                labelText: "Estado Civil",
+                                labelStyle: TextStyle(color: Color(0xFF00A896)),
+                                fillColor: Colors.white,
+                                filled: true,
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Color(0xFF00A896)),
+                                    borderRadius: BorderRadius.circular(10)),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Color(0xFF00A896), width: 2.0),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusColor: Colors.white,
+                              ),
                             ),
                           ),
                         ),
@@ -258,15 +337,21 @@ class CadastroPacientes extends StatelessWidget {
                       padding: const EdgeInsets.all(6.0),
                       child: TextFormField(
                         decoration: InputDecoration(
-                            floatingLabelBehavior:
-                                FloatingLabelBehavior.always,
-                            labelText: "Ocupação",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          labelText: "Ocupação",
+                          labelStyle: TextStyle(color: Color(0xFF00A896)),
+                          fillColor: Colors.white,
+                          filled: true,
+                          enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10))),
+                              borderRadius: BorderRadius.circular(10)),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color(0xFF00A896), width: 2.0),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          focusColor: Colors.white,
+                        ),
                       ),
                     ),
                     Padding(
@@ -285,45 +370,63 @@ class CadastroPacientes extends StatelessWidget {
                       padding: const EdgeInsets.all(6.0),
                       child: TextFormField(
                         decoration: InputDecoration(
-                            floatingLabelBehavior:
-                                FloatingLabelBehavior.always,
-                            labelText: "Endereço residencial",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          labelText: "Endereço residencial",
+                          labelStyle: TextStyle(color: Color(0xFF00A896)),
+                          fillColor: Colors.white,
+                          filled: true,
+                          enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10))),
+                              borderRadius: BorderRadius.circular(10)),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color(0xFF00A896), width: 2.0),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          focusColor: Colors.white,
+                        ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(6.0),
                       child: TextFormField(
                         decoration: InputDecoration(
-                            floatingLabelBehavior:
-                                FloatingLabelBehavior.always,
-                            labelText: "Complemento",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          labelText: "Complemento",
+                          labelStyle: TextStyle(color: Color(0xFF00A896)),
+                          fillColor: Colors.white,
+                          filled: true,
+                          enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10))),
+                              borderRadius: BorderRadius.circular(10)),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color(0xFF00A896), width: 2.0),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          focusColor: Colors.white,
+                        ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(6.0),
                       child: TextFormField(
                         decoration: InputDecoration(
-                            floatingLabelBehavior:
-                                FloatingLabelBehavior.always,
-                            labelText: ("Bairro"),
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          labelText: ("Bairro"),
+                          labelStyle: TextStyle(color: Color(0xFF00A896)),
+                          fillColor: Colors.white,
+                          filled: true,
+                          enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10))),
+                              borderRadius: BorderRadius.circular(10)),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color(0xFF00A896), width: 2.0),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          focusColor: Colors.white,
+                        ),
                       ),
                     ),
                     Row(
@@ -334,15 +437,23 @@ class CadastroPacientes extends StatelessWidget {
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
                               decoration: InputDecoration(
-                                  floatingLabelBehavior:
-                                      FloatingLabelBehavior.always,
-                                  labelText: "Cidade",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10))),
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.always,
+                                labelText: "Cidade",
+                                labelStyle: TextStyle(color: Color(0xFF00A896)),
+                                fillColor: Colors.white,
+                                filled: true,
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Color(0xFF00A896)),
+                                    borderRadius: BorderRadius.circular(10)),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Color(0xFF00A896), width: 2.0),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusColor: Colors.white,
+                              ),
                             ),
                           ),
                         ),
@@ -352,15 +463,23 @@ class CadastroPacientes extends StatelessWidget {
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
                               decoration: InputDecoration(
-                                  floatingLabelBehavior:
-                                      FloatingLabelBehavior.always,
-                                  labelText: "Estado",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10))),
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.always,
+                                labelText: "Estado",
+                                labelStyle: TextStyle(color: Color(0xFF00A896)),
+                                fillColor: Colors.white,
+                                filled: true,
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Color(0xFF00A896)),
+                                    borderRadius: BorderRadius.circular(10)),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Color(0xFF00A896), width: 2.0),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                focusColor: Colors.white,
+                              ),
                             ),
                           ),
                         ),
@@ -370,45 +489,63 @@ class CadastroPacientes extends StatelessWidget {
                       padding: const EdgeInsets.all(6.0),
                       child: TextFormField(
                         decoration: InputDecoration(
-                            floatingLabelBehavior:
-                                FloatingLabelBehavior.always,
-                            labelText: ("Celular Pessoal"),
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          labelText: ("Celular Pessoal"),
+                          labelStyle: TextStyle(color: Color(0xFF00A896)),
+                          fillColor: Colors.white,
+                          filled: true,
+                          enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10))),
+                              borderRadius: BorderRadius.circular(10)),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color(0xFF00A896), width: 2.0),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          focusColor: Colors.white,
+                        ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(6.0),
                       child: TextFormField(
                         decoration: InputDecoration(
-                            floatingLabelBehavior:
-                                FloatingLabelBehavior.always,
-                            labelText: ("Telefone Residencial"),
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          labelText: ("Telefone Residencial"),
+                          labelStyle: TextStyle(color: Color(0xFF00A896)),
+                          fillColor: Colors.white,
+                          filled: true,
+                          enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10))),
+                              borderRadius: BorderRadius.circular(10)),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color(0xFF00A896), width: 2.0),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          focusColor: Colors.white,
+                        ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(6.0),
                       child: TextFormField(
                         decoration: InputDecoration(
-                            floatingLabelBehavior:
-                                FloatingLabelBehavior.always,
-                            labelText: ("Horário de Trabalho"),
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          labelText: ("Horário de Trabalho"),
+                          labelStyle: TextStyle(color: Color(0xFF00A896)),
+                          fillColor: Colors.white,
+                          filled: true,
+                          enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10))),
+                              borderRadius: BorderRadius.circular(10)),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color(0xFF00A896), width: 2.0),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          focusColor: Colors.white,
+                        ),
                       ),
                     ),
                   ]),

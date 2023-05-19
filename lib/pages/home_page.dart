@@ -156,24 +156,3 @@ class HomePage extends StatelessWidget {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-//appBar: AppBar(
-        //backgroundColor: const Color.fromRGBO(0, 168, 150, 100),
-        //title: const Text('Home Page'),
-        //leading: const CircleAvatar(
-          //radius: 10000,
-          //backgroundColor: Color.fromRGBO(0, 168, 150, 0),
-          //backgroundImage: AssetImage('images/logo_vidaleve.png'),
-        //),
-      //),
