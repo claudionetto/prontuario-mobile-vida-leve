@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:vida_leve/pages/cadastro_pacientes.dart';
+import 'package:vida_leve/pages/calendar_page.dart';
 import 'package:vida_leve/pages/login_page.dart';
 import 'package:vida_leve/pages/pacientes.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 import 'pages/home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  initializeDateFormatting().then((_) => runApp(const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -22,12 +24,13 @@ class MyApp extends StatelessWidget {
           colorScheme: telaPrincipal.colorScheme.copyWith(
               primary: const Color.fromRGBO(0, 168, 150, 100),
               secondary: const Color.fromRGBO(2, 128, 144, 100))),
-      initialRoute: "/cadastro_pacientes",
+      initialRoute: "/calendario",
       routes: {
         "/login": (context) => LoginPage(),
         "/home": (context) => HomePage(),
         "/pacientes": (context) => Pacientes(),
         "/cadastro_pacientes": (context) => CadastroPacientes(),
+        "/calendario": (context) => CalendarPage(),
       },
     );
   }
