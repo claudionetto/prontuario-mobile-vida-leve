@@ -38,7 +38,9 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.ad_units_rounded),
             title: const Text("Agenda"),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushReplacementNamed(context, "/calendario");
+            },
           ),
           Expanded(child: SizedBox()),
           ListTile(

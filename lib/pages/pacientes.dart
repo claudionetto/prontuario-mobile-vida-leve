@@ -48,7 +48,8 @@ class _PacientesState extends State<Pacientes> {
                       iconSize: 30,
                       color: Colors.white,
                       onPressed: () {
-                        // Função a ser executada quando o ícone for clicado
+                        Navigator.pushReplacementNamed(
+                            context, "/cadastro_pacientes");
                       },
                     ),
                   ),
