@@ -12,6 +12,7 @@ var now = DateTime.now();
 var firstDay = DateTime(now.year, now.month - 12, now.day);
 var lastDay = DateTime(now.year, now.month + 12, now.day);
 CalendarFormat format = CalendarFormat.month;
+DateTime currentMonth = DateTime.now();
 
 bool load = false;
 List<AppEvent> events = [];
@@ -31,7 +32,10 @@ class CalendarPage extends StatefulWidget {
 class _CalendarPageState extends State<CalendarPage> {
   @override
   void initState() {
+    super.initState();
     addSchedules();
+
+    focusedDay = selectedDay;
   }
 
   List<dynamic> _getEventsForDay(DateTime date) {
@@ -82,6 +86,8 @@ class _CalendarPageState extends State<CalendarPage> {
               setState(() {
                 selectedDay = newSelectedDay;
                 focusedDay = newFocusedDay;
+                currentMonth =
+                    DateTime(newSelectedDay.year, newSelectedDay.month);
               });
             },
             selectedDayPredicate: (day) => isSameDay(day, selectedDay),
@@ -90,8 +96,7 @@ class _CalendarPageState extends State<CalendarPage> {
                 format = _format;
               });
             },
-          
-            focusedDay: now,
+            focusedDay: currentMonth,
             firstDay: firstDay,
             lastDay: lastDay,
             locale: 'pt_BR',
@@ -102,7 +107,6 @@ class _CalendarPageState extends State<CalendarPage> {
               CalendarFormat.twoWeeks: "2 semanas"
             },
             headerStyle: HeaderStyle(
-            
               leftChevronIcon: const Icon(
                 Icons.chevron_left,
                 size: 32,
@@ -123,7 +127,7 @@ class _CalendarPageState extends State<CalendarPage> {
               formatButtonTextStyle:
                   const TextStyle(color: Colors.white, fontSize: 12),
               titleTextStyle: const TextStyle(
-                fontSize: 27.0,
+                fontSize: 22.0,
                 fontWeight: FontWeight.w900,
                 fontFamily: 'Montserrat',
                 color: Color(0xFF00A896),
@@ -231,6 +235,25 @@ class _CalendarPageState extends State<CalendarPage> {
             ),
           ),
           const SizedBox(height: 16.0),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, "/pacientes");
+              },
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 80.0, vertical: 20.0),
+                textStyle: const TextStyle(fontSize: 20.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+              ),
+              child: const Text(
+                'Nova consulta',
+              ),
+            ),
+          ),
           Expanded(
               child: GridView.count(
             crossAxisCount: 1,

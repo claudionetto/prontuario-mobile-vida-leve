@@ -36,25 +36,30 @@ class AnamnesePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Color(0xFF00A896).withOpacity(0.4),
-                          borderRadius: BorderRadius.circular(
-                              20), // Define o raio para as bordas
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.health_and_safety,
-                              size: 70,
-                            ),
-                            Text("Geral",
-                                style: TextStyle(
-                                  fontSize: 25.0,
-                                  fontWeight: FontWeight.w600,
-                                )),
-                          ],
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, "/anamnese_geral");
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Color(0xFF00A896).withOpacity(0.4),
+                            borderRadius: BorderRadius.circular(
+                                20), // Define o raio para as bordas
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.health_and_safety,
+                                size: 70,
+                              ),
+                              Text("Geral",
+                                  style: TextStyle(
+                                    fontSize: 25.0,
+                                    fontWeight: FontWeight.w600,
+                                  )),
+                            ],
+                          ),
                         ),
                       ),
                     ),

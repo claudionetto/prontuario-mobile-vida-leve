@@ -551,7 +551,26 @@ class CadastroPacientes extends StatelessWidget {
                   ]),
                 ),
               ),
-            )
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 15, top: 5),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, "/pacientes");
+                },
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 60.0, vertical: 20.0),
+                  textStyle: const TextStyle(fontSize: 20.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                ),
+                child: const Text(
+                  'Próximo',
+                ),
+              ),
+            ),
           ],
         ),
       ),

@@ -44,7 +44,8 @@ class HomePage extends StatelessWidget {
                               iconSize: 30,
                               color: Colors.white,
                               onPressed: () {
-                                // Função a ser executada quando o ícone for clicado
+                                Navigator.pushReplacementNamed(
+                                    context, "/calendario");
                               },
                             ),
                           ),
@@ -134,13 +135,15 @@ class HomePage extends StatelessWidget {
                     const SizedBox(height: 30.0),
                     ElevatedButton(
                       onPressed: () {
-                        print('pacientes');
                         Navigator.pushReplacementNamed(context, "/pacientes");
                       },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 32.0, vertical: 16.0),
+                            horizontal: 60.0, vertical: 20.0),
                         textStyle: const TextStyle(fontSize: 20.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
                       ),
                       child: const Text(
                         'Pacientes',
