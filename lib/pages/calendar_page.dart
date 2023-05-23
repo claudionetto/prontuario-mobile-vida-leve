@@ -90,6 +90,7 @@ class _CalendarPageState extends State<CalendarPage> {
                 format = _format;
               });
             },
+          
             focusedDay: now,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -101,6 +102,7 @@ class _CalendarPageState extends State<CalendarPage> {
               CalendarFormat.twoWeeks: "2 semanas"
             },
             headerStyle: HeaderStyle(
+            
               leftChevronIcon: const Icon(
                 Icons.chevron_left,
                 size: 32,
@@ -183,49 +185,49 @@ class _CalendarPageState extends State<CalendarPage> {
                   ),
                 );
               },
-              // markerBuilder: (context, day, events) {
-              //   if (events.isNotEmpty) {
-              //     return Stack(
-              //       alignment: Alignment.center,
-              //       children: [
-              //         Positioned(
-              //           bottom: 2.0,
-              //           child: Container(
-              //             height: 10,
-              //             width: 10,
-              //             decoration: const BoxDecoration(
-              //               color: Colors.green,
-              //               shape: BoxShape.rectangle,
-              //               borderRadius: BorderRadius.all(
-              //                 Radius.circular(15),
-              //               ),
-              //             ),
-              //           ),
-              //         ),
-              //       ],
-              //     );
-              //   } else {
-              //     return Stack(
-              //       alignment: Alignment.center,
-              //       children: [
-              //         Positioned(
-              //           bottom: 2.0,
-              //           child: Container(
-              //             height: 10,
-              //             width: 10,
-              //             decoration: const BoxDecoration(
-              //               color: Colors.red,
-              //               shape: BoxShape.rectangle,
-              //               borderRadius: BorderRadius.all(
-              //                 Radius.circular(15),
-              //               ),
-              //             ),
-              //           ),
-              //         ),
-              //       ],
-              //     );
-              //   }
-              // },
+              markerBuilder: (context, day, events) {
+                if (events.length < 6) {
+                  return Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Positioned(
+                        bottom: 2.0,
+                        child: Container(
+                          height: 10,
+                          width: 10,
+                          decoration: const BoxDecoration(
+                            color: Colors.green,
+                            shape: BoxShape.rectangle,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(15),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                } else {
+                  return Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Positioned(
+                        bottom: 2.0,
+                        child: Container(
+                          height: 10,
+                          width: 10,
+                          decoration: const BoxDecoration(
+                            color: Colors.red,
+                            shape: BoxShape.rectangle,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(15),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                }
+              },
             ),
           ),
           const SizedBox(height: 16.0),

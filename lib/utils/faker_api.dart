@@ -9,7 +9,7 @@ class FakerApi {
   static Future<List<Data>> getData() async {
     String url = '';
     url =
-        'https://fakerapi.it/api/v1/persons?_quantity=500&_gender=male&_birthday_start=2023-01-25&_birthday_end=2023-12-31';
+        'https://fakerapi.it/api/v1/persons?_quantity=1000&_gender=male&_birthday_start=2023-01-25&_birthday_end=2023-12-31';
     try {
       final response = await http.get(Uri.parse(url));
       if (response.statusCode == 200) {
