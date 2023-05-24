@@ -14,6 +14,111 @@ class AnamneseGeralPage extends StatefulWidget {
 }
 
 class _AnamneseGeralPageState extends State<AnamneseGeralPage> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController nomeCompletoController = TextEditingController();
+  TextEditingController dataNascimentoController = TextEditingController();
+  TextEditingController idadeController = TextEditingController();
+  TextEditingController generoController = TextEditingController();
+  TextEditingController profissaoController = TextEditingController();
+  TextEditingController estadoCivilController = TextEditingController();
+  TextEditingController etniaController = TextEditingController();
+  TextEditingController religiaoController = TextEditingController();
+  TextEditingController naturalidadeController = TextEditingController();
+  TextEditingController enderecoController = TextEditingController();
+  TextEditingController bairroController = TextEditingController();
+  TextEditingController cidadeController = TextEditingController();
+  TextEditingController telefoneResidencialController = TextEditingController();
+  TextEditingController telefoneCelularController = TextEditingController();
+  TextEditingController escolaridadeController = TextEditingController();
+  TextEditingController trabalhaAtualmenteController = TextEditingController();
+  TextEditingController trabalhoAtivoParadoController = TextEditingController();
+  TextEditingController habitosController = TextEditingController();
+  TextEditingController rendaFamiliarController = TextEditingController();
+  TextEditingController pressaoArterialController = TextEditingController();
+  TextEditingController frequenciaCardiacaController = TextEditingController();
+  TextEditingController glicemiaCapilarController = TextEditingController();
+  TextEditingController pulsoController = TextEditingController();
+  TextEditingController temperaturaController = TextEditingController();
+  TextEditingController saturacaoController = TextEditingController();
+  TextEditingController frequenciaRespiratoriaController =
+      TextEditingController();
+  TextEditingController doresController = TextEditingController();
+  TextEditingController queixaPrincipalController = TextEditingController();
+  TextEditingController patologiasController = TextEditingController();
+  TextEditingController antecedentesController = TextEditingController();
+  TextEditingController condicoesGeraisController = TextEditingController();
+  TextEditingController marcapassoController = TextEditingController();
+  TextEditingController anticoncepcionalController = TextEditingController();
+  TextEditingController cicloMenstrualController = TextEditingController();
+  TextEditingController gestanteController = TextEditingController();
+  TextEditingController filhosController = TextEditingController();
+  TextEditingController alergiasController = TextEditingController();
+  TextEditingController protesesController = TextEditingController();
+  TextEditingController sonoController = TextEditingController();
+  TextEditingController funcionamentoIntestinalController =
+      TextEditingController();
+  TextEditingController eliminacaoFisiologicaController =
+      TextEditingController();
+  TextEditingController locomocaoController = TextEditingController();
+  TextEditingController tendenciaGanhoPesoController = TextEditingController();
+  TextEditingController efGeralController = TextEditingController();
+  TextEditingController efOlhosController = TextEditingController();
+  TextEditingController efPescocoController = TextEditingController();
+  TextEditingController estadoHigieneController = TextEditingController();
+  TextEditingController fumaneteController = TextEditingController();
+  TextEditingController frequenciaAlcoolicaController = TextEditingController();
+
+  String email = "veraalmeida@gmail.com";
+  String nomeCompleto = "Vera Almeida";
+  String dataNascimento = "07/02/1990";
+  String idade = "33";
+  String genero = "Feminino";
+  String profissao = "Professora 07:00 - 17:00";
+  String estadoCivil = "Solteira";
+  String etnia = "Caucasiana";
+  String religiao = "Cristã";
+  String naturalidade = "Brasileira";
+  String endereco = "Rua Amado Batista";
+  String bairro = "Bairro Roseira";
+  String cidade = "São João da Boa Vista";
+  String telefoneResidencial = "3633-9425";
+  String telefoneCelular = "19 98990-2233";
+  String escolaridade = "Ensino Superior completo";
+  String trabalhaAtualmente = "Sim";
+  String trabalhoAtivoParado = "Parado";
+  String habitos = "Usar muito as Redes Sociais";
+  String rendaFamiliar = "15 mil reais";
+  String pressaoArterial = "";
+  String frequenciaCardiaca = "";
+  String glicemiaCapilar = "";
+  String pulso = "";
+  String temperatura = "";
+  String saturacao = "";
+  String frequenciaRespiratoria = "";
+  String dores = "";
+  String queixaPrincipal = "";
+  String patologias = "";
+  String antecedentes = "";
+  String condicoesGerais = "";
+  String marcapasso = "";
+  String anticoncepcional = "";
+  String cicloMenstrual = "";
+  String gestante = "";
+  String filhos = "";
+  String alergias = "";
+  String proteses = "";
+  String sono = "";
+  String funcionamentoIntestinal = "";
+  String eliminacaoFisiologica = "";
+  String locomocao = "";
+  String tendenciaGanhoPeso = "";
+  String efGeral = "";
+  String efOlhos = "";
+  String efPescoco = "";
+  String estadoHigiene = "";
+  String fuamente = "";
+  String frequenciaAlcoolica = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,56 +192,210 @@ class _AnamneseGeralPageState extends State<AnamneseGeralPage> {
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
                         children: [
-                          CustomTextField(labelText: "Email"),
-                          CustomTextField(labelText: "Nome Completo"),
-                          CustomTextField(labelText: "Data de Nascimento"),
-                          CustomTextField(labelText: "Idade"),
-                          CustomTextField(labelText: "Genero"),
-                          CustomTextField(labelText: "Profissões e horário de trabalho"),
-                          CustomTextField(labelText: "Estado civil"),
-                          CustomTextField(labelText: "Etnia"),
-                          CustomTextField(labelText: "Religião"),
-                          CustomTextField(labelText: "Naturalidade"),
-                          CustomTextField(labelText: "Endereço"),
-                          CustomTextField(labelText: "Bairro"),
-                          CustomTextField(labelText: "Cidade"),
-                          CustomTextField(labelText: "Telefone Residencial"),
-                          CustomTextField(labelText: "Telefone Celular"),
-                          CustomTextField(labelText: "Escolaridade"),
-                          CustomTextField(labelText: "Trabalha Atualmente"),
-                          CustomTextField(labelText: "Seu trabalho é ativo ou parado?"),
-                          CustomTextField(labelText: "Hábitos"),
-                          CustomTextField(labelText: "Renda Familiar"),
-                          CustomTextField(labelText: "Pressão Arterial"),
-                          CustomTextField(labelText: "Frequência Cardiaca"),
-                          CustomTextField(labelText: "Glicemia Capilar"),
-                          CustomTextField(labelText: "Pulso"),
-                          CustomTextField(labelText: "Temperatura"),
-                          CustomTextField(labelText: "Saturação"),
-                          CustomTextField(labelText: "Frequência Respiratória"),
-                          CustomTextField(labelText: "Possui dor(es) ? Quais ?"),
-                          CustomTextField(labelText: "Queixa principal"),
-                          CustomTextField(labelText: "Patologias pregressas / Cirurgias Anteriores"),
-                          CustomTextField(labelText: "Antecedentes familiares"),
-                          CustomTextField(labelText: "Condições gerais, medicamentos de uso continuo"),
-                          CustomTextField(labelText: "Portador de marcapasso ?"),
-                          CustomTextField(labelText: "Faz uso de anticoncepcional ? Qual ?"),
-                          CustomTextField(labelText: "Possui ciclo menstrual regular ?"),
-                          CustomTextField(labelText: "Gestante ?"),
-                          CustomTextField(labelText: "Possui filhos ? Quantos ?"),
-                          CustomTextField(labelText: "Alergias"),
-                          CustomTextField(labelText: "Uso de próteses"),
-                          CustomTextField(labelText: "Sono e Repouso? Horas por dia"),
-                          CustomTextField(labelText: "Funcionamento intestinal é regular ?"),
-                          CustomTextField(labelText: "Eliminição Fisiológica"),
-                          CustomTextField(labelText: "Locomoção"),
-                          CustomTextField(labelText: "Tendência de ganho de peso"),
-                          CustomTextField(labelText: "Exame Fisico: Estado Geral"),
-                          CustomTextField(labelText: "E F: Pescoço, Respiração, Circulação e Pele"),
-                          CustomTextField(labelText: "Estado de higiene"),
-                          CustomTextField(labelText: "Fumante"),
-                          CustomTextField(labelText: "Sua frequência do uso de bebida alcoólica"),
-
+                          CustomTextField(
+                              labelText: "Email",
+                              controller: emailController,
+                              initialValue: email),
+                          CustomTextField(
+                              labelText: "Nome Completo",
+                              controller: nomeCompletoController,
+                              initialValue: nomeCompleto),
+                          CustomTextField(
+                              labelText: "Data de Nascimento",
+                              controller: dataNascimentoController,
+                              initialValue: dataNascimento),
+                          CustomTextField(
+                              labelText: "Idade",
+                              controller: idadeController,
+                              initialValue: idade),
+                          CustomTextField(
+                              labelText: "Genero",
+                              controller: generoController,
+                              initialValue: genero),
+                          CustomTextField(
+                              labelText: "Profissões e horário de trabalho",
+                              controller: profissaoController,
+                              initialValue: profissao),
+                          CustomTextField(
+                              labelText: "Estado civil",
+                              controller: estadoCivilController,
+                              initialValue: estadoCivil),
+                          CustomTextField(
+                              labelText: "Etnia",
+                              controller: etniaController,
+                              initialValue: etnia),
+                          CustomTextField(
+                              labelText: "Religião",
+                              controller: religiaoController,
+                              initialValue: religiao),
+                          CustomTextField(
+                              labelText: "Naturalidade",
+                              controller: naturalidadeController,
+                              initialValue: naturalidade),
+                          CustomTextField(
+                              labelText: "Endereço",
+                              controller: enderecoController,
+                              initialValue: endereco),
+                          CustomTextField(
+                              labelText: "Bairro",
+                              controller: bairroController,
+                              initialValue: bairro),
+                          CustomTextField(
+                              labelText: "Cidade",
+                              controller: cidadeController,
+                              initialValue: cidade),
+                          CustomTextField(
+                              labelText: "Telefone Residencial",
+                              controller: telefoneResidencialController,
+                              initialValue: telefoneResidencial),
+                          CustomTextField(
+                              labelText: "Telefone Celular",
+                              controller: telefoneCelularController,
+                              initialValue: telefoneCelular),
+                          CustomTextField(
+                              labelText: "Escolaridade",
+                              controller: escolaridadeController,
+                              initialValue: escolaridade),
+                          CustomTextField(
+                              labelText: "Trabalha Atualmente",
+                              controller: trabalhaAtualmenteController,
+                              initialValue: trabalhaAtualmente),
+                          CustomTextField(
+                              labelText: "Seu trabalho é ativo ou parado?",
+                              controller: trabalhoAtivoParadoController,
+                              initialValue: trabalhoAtivoParado),
+                          CustomTextField(
+                              labelText: "Hábitos",
+                              controller: habitosController,
+                              initialValue: habitos),
+                          CustomTextField(
+                              labelText: "Renda Familiar",
+                              controller: rendaFamiliarController,
+                              initialValue: rendaFamiliar),
+                          CustomTextField(
+                              labelText: "Pressão Arterial",
+                              controller: pressaoArterialController,
+                              initialValue: pressaoArterial),
+                          CustomTextField(
+                              labelText: "Frequência Cardiaca",
+                              controller: frequenciaCardiacaController,
+                              initialValue: frequenciaCardiaca),
+                          CustomTextField(
+                              labelText: "Glicemia Capilar",
+                              controller: glicemiaCapilarController,
+                              initialValue: glicemiaCapilar),
+                          CustomTextField(
+                              labelText: "Pulso",
+                              controller: pulsoController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Temperatura",
+                              controller: temperaturaController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Saturação",
+                              controller: saturacaoController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Frequência Respiratória",
+                              controller: frequenciaRespiratoriaController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Possui dor(es) ? Quais ?",
+                              controller: doresController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Queixa principal",
+                              controller: queixaPrincipalController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText:
+                                  "Patologias pregressas / Cirurgias Anteriores",
+                              controller: patologiasController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Antecedentes familiares",
+                              controller: antecedentesController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText:
+                                  "Condições gerais, medicamentos de uso continuo",
+                              controller: condicoesGeraisController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Portador de marcapasso ?",
+                              controller: marcapassoController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Faz uso de anticoncepcional ? Qual ?",
+                              controller: anticoncepcionalController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Possui ciclo menstrual regular ?",
+                              controller: cicloMenstrualController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Gestante ?",
+                              controller: gestanteController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Possui filhos ? Quantos ?",
+                              controller: filhosController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Alergias",
+                              controller: alergiasController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Uso de próteses",
+                              controller: protesesController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Sono e Repouso? Horas por dia",
+                              controller: sonoController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Funcionamento intestinal é regular ?",
+                              controller: funcionamentoIntestinalController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Eliminição Fisiológica",
+                              controller: eliminacaoFisiologicaController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Locomoção",
+                              controller: locomocaoController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Tendência de ganho de peso",
+                              controller: tendenciaGanhoPesoController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Exame Fisico: Estado Geral",
+                              controller: efGeralController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "E F: Olhos, Ouvidos, Boca e Nariz",
+                              controller: efOlhosController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText:
+                                  "E F: Pescoço, Respiração, Circulação e Pele",
+                              controller: efPescocoController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Estado de higiene",
+                              controller: estadoHigieneController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText: "Fumante",
+                              controller: fumaneteController,
+                              initialValue: ""),
+                          CustomTextField(
+                              labelText:
+                                  "Sua frequência do uso de bebida alcoólica",
+                              controller: frequenciaAlcoolicaController,
+                              initialValue: ""),
                         ],
                       ),
                     ),
@@ -147,7 +406,76 @@ class _AnamneseGeralPageState extends State<AnamneseGeralPage> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            String email = emailController.text;
+            String nomeCompleto = nomeCompletoController.text;
+            String dataNascimento = dataNascimentoController.text;
+            String idade = idadeController.text;
+            String genero = generoController.text;
+            String profissao = profissaoController.text;
+            String estadoCivil = estadoCivilController.text;
+            String etnia = etniaController.text;
+            String religiao = religiaoController.text;
+            String naturalidade = naturalidadeController.text;
+            String endereco = enderecoController.text;
+            String bairro = bairroController.text;
+            String cidade = cidadeController.text;
+            String telefoneResidencial = telefoneResidencialController.text;
+            String telefoneCelular = telefoneCelularController.text;
+            String escolaridade = escolaridadeController.text;
+            String trabalhaAtualmente = trabalhaAtualmenteController.text;
+            String trabalhoAtivoParado = trabalhoAtivoParadoController.text;
+            String habitos = habitosController.text;
+            String rendaFamiliar = rendaFamiliarController.text;
+            String pressaoArterial = pressaoArterialController.text;
+            String frequenciaCardiaca = frequenciaCardiacaController.text;
+            String glicemiaCapilar = glicemiaCapilarController.text;
+            String pulso = pulsoController.text;
+            String temperatura = temperaturaController.text;
+            String saturacao = saturacaoController.text;
+            String frequenciaRespiratoria =
+                frequenciaRespiratoriaController.text;
+            String dores = doresController.text;
+            String queixaPrincipal = queixaPrincipalController.text;
+            String patologias = patologiasController.text;
+            String antecedentes = antecedentesController.text;
+            String condicoesGerais = condicoesGeraisController.text;
+            String marcapasso = marcapassoController.text;
+            String anticoncepcional = anticoncepcionalController.text;
+            String cicloMenstrual = cicloMenstrualController.text;
+            String gestante = gestanteController.text;
+            String filhos = filhosController.text;
+            String alergias = alergiasController.text;
+            String proteses = protesesController.text;
+            String sono = sonoController.text;
+            String funcionamentoIntestinal =
+                funcionamentoIntestinalController.text;
+            String eliminacaoFisiologica = eliminacaoFisiologicaController.text;
+            String locomocao = locomocaoController.text;
+            String tendenciaGanhoPeso = tendenciaGanhoPesoController.text;
+            String efGeral = efGeralController.text;
+            String efOlhos = efOlhosController.text;
+            String efPescoco = efPescocoController.text;
+            String estadoHigiene = estadoHigieneController.text;
+            String fuamente = fumaneteController.text;
+            String frequenciaAlcoolica = frequenciaAlcoolicaController.text;
+          });
+
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              backgroundColor: Colors.green,
+              content: Text(
+                'Atualizações feitas',
+                textAlign: TextAlign.center,
+              ),
+              duration: Duration(seconds: 2), // Define a duração de 2 segundos
+            ),
+          );
+        },
+        child: Icon(Icons.save),
+      ),
     );
   }
 }
-
