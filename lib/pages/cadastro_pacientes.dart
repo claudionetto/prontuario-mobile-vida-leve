@@ -588,7 +588,7 @@ class CadastroPacientes extends StatelessWidget {
                   ),
                 ),
                 child: const Text(
-                  'Próximo',
+                  'Cadastrar Paciente',
                 ),
               ),
             ),

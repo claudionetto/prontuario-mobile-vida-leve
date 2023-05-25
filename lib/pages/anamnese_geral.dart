@@ -8,7 +8,10 @@ import '../utils/dados.dart';
 import '../utils/drawer.dart';
 
 class AnamneseGeralPage extends StatefulWidget {
-  const AnamneseGeralPage({super.key});
+  final int pacienteId;
+
+  const AnamneseGeralPage({Key? key, required this.pacienteId})
+      : super(key: key);
 
   @override
   State<AnamneseGeralPage> createState() => _AnamneseGeralPageState();
@@ -69,10 +72,15 @@ class _AnamneseGeralPageState extends State<AnamneseGeralPage> {
   TextEditingController fumaneteController = TextEditingController();
   TextEditingController frequenciaAlcoolicaController = TextEditingController();
 
-  int pacienteId = 0
-;
+  get pacienteId => widget.pacienteId;
 
   @override
+  void initState() {
+    super.initState();
+    // Acesse o valor de pacienteId usando widget.pacienteId
+    int pacienteId = widget.pacienteId;
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       endDrawer: MyDrawer(),

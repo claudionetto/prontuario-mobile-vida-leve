@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vida_leve/pages/anamnese_geral.dart';
 import 'package:vida_leve/utils/appbar.dart';
 import 'package:vida_leve/utils/drawer.dart';
 
@@ -69,41 +70,54 @@ class _PacientesState extends State<Pacientes> {
             child: ListView.builder(
               itemCount: dados.length,
               itemBuilder: (context, index) {
-                return Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: 64,
-                        height: 64,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image:
-                                NetworkImage(dados[index]['foto'].toString()),
-                          ),
-                        ),
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            AnamneseGeralPage(pacienteId: index),
                       ),
-                      SizedBox(width: 16),
-                      Column(
+                    );
+                  },
+                  child: Container(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8, horizontal: 16),
+                      child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            dados[index]['nomeCompleto'].toString(),
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
+                          Container(
+                            width: 64,
+                            height: 64,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: NetworkImage(
+                                    dados[index]['foto'].toString()),
+                              ),
+                            ),
                           ),
-                          SizedBox(height: 8),
-                          Text(
-                            dados[index]['descricao'].toString(),
-                            style: TextStyle(fontSize: 16),
+                          SizedBox(width: 16),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                dados[index]['nomeCompleto'].toString(),
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(height: 8),
+                              Text(
+                                dados[index]['descricao'].toString(),
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ],
                           ),
                         ],
                       ),
-                    ],
+                    ),
                   ),
                 );
               },
