@@ -1,12 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:vida_leve/pages/anamnese_geral.dart';
+import 'package:vida_leve/utils/customtextfield.dart';
+import 'package:vida_leve/utils/dados.dart';
 import 'package:vida_leve/utils/drawer.dart';
+import 'package:vida_leve/utils/global.dart';
 
 import '../utils/appbar.dart';
 
-class PerfilPaciente extends StatelessWidget {
+class PerfilPaciente extends StatefulWidget {
   const PerfilPaciente({super.key});
+
+  @override
+  State<PerfilPaciente> createState() => _PerfilPacienteState();
+}
+
+class _PerfilPacienteState extends State<PerfilPaciente> {
+  final pacienteId = Globals.pacienteId;
+  TextEditingController emailController = TextEditingController();
+  TextEditingController nomeCompletoController = TextEditingController();
+  TextEditingController dataNascimentoController = TextEditingController();
+  TextEditingController idadeController = TextEditingController();
+  TextEditingController generoController = TextEditingController();
+  TextEditingController profissaoController = TextEditingController();
+  TextEditingController estadoCivilController = TextEditingController();
+  TextEditingController etniaController = TextEditingController();
+  TextEditingController religiaoController = TextEditingController();
+  TextEditingController naturalidadeController = TextEditingController();
+  TextEditingController enderecoController = TextEditingController();
+  TextEditingController complementoController = TextEditingController();
+  TextEditingController bairroController = TextEditingController();
+  TextEditingController cidadeController = TextEditingController();
+  TextEditingController estadoController = TextEditingController();
+
+  TextEditingController telefoneResidencialController = TextEditingController();
+  TextEditingController telefoneCelularController = TextEditingController();
+  TextEditingController alturaController = TextEditingController();
+  TextEditingController pesoController = TextEditingController();
+
+  String getInitialValue(Map<String, dynamic> data, String key) {
+    return data[key] != null ? data[key].toString() : '';
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +54,16 @@ class PerfilPaciente extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 25),
               child: Column(children: [
                 CircleAvatar(
-                  radius: 45, // Define o raio do avatar
-                  backgroundImage: NetworkImage(
-                      "https://media.istockphoto.com/id/1396403999/pt/foto/look-to-the-future-with-hope.jpg?s=612x612&w=is&k=20&c=oIRcJ6M0moRzcSsDH1SfEYVZ0CtBlZwbY_lIdzx256c="),
+                    radius: 45, // Define o raio do avatar
+                    backgroundImage:
+                        NetworkImage(dados[pacienteId]['foto'].toString())),
+                SizedBox(height: 15),
+                Text(
+                  dados[pacienteId]['nomeCompleto'].toString(),
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.w900,
+                  ),
                 ),
                 SizedBox(height: 15),
                 Padding(
@@ -40,55 +82,20 @@ class PerfilPaciente extends StatelessWidget {
                   children: [
                     Expanded(
                       flex: 3,
-                      child: Padding(
-                          padding: const EdgeInsets.all(6.0),
-                          child: TextFormField(
-                            initialValue: "07/02/1990",
-                            decoration: InputDecoration(
-                              floatingLabelBehavior:
-                                  FloatingLabelBehavior.always,
-                              labelText: "Nascimento",
-                              labelStyle: TextStyle(color: Color(0xFF00A896)),
-                              fillColor: Colors.white,
-                              filled: true,
-                              enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Color(0xFF00A896), width: 2.0),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              focusColor: Colors.white,
-                            ),
-                          )),
+                      child: CustomTextField(
+                        labelText: "Data de Nascimento",
+                        controller: dataNascimentoController,
+                        initialValue: getInitialValue(
+                            dados[pacienteId], 'dataNascimento'),
+                      ),
                     ),
                     Expanded(
                       flex: 1,
-                      child: Padding(
-                        padding: const EdgeInsets.all(6.0),
-                        child: TextFormField(
-                          initialValue: "33",
-                          decoration: InputDecoration(
-                            floatingLabelBehavior: FloatingLabelBehavior.always,
-                            labelText: "Idade",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10)),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Color(0xFF00A896), width: 2.0),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            focusColor: Colors.white,
-                          ),
-                        ),
+                      child: CustomTextField(
+                        labelText: "Idade",
+                        controller: idadeController,
+                        initialValue:
+                            getInitialValue(dados[pacienteId], 'idade'),
                       ),
                     ),
                   ],
@@ -97,52 +104,20 @@ class PerfilPaciente extends StatelessWidget {
                   children: [
                     Expanded(
                       flex: 7,
-                      child: Padding(
-                        padding: const EdgeInsets.all(6.0),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            floatingLabelBehavior: FloatingLabelBehavior.always,
-                            labelText: "Naturalidade",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10)),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Color(0xFF00A896), width: 2.0),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            focusColor: Colors.white,
-                          ),
-                        ),
+                      child: CustomTextField(
+                        labelText: "Naturalidade",
+                        controller: naturalidadeController,
+                        initialValue:
+                            getInitialValue(dados[pacienteId], 'naturalidade'),
                       ),
                     ),
                     Expanded(
                       flex: 4,
-                      child: Padding(
-                        padding: const EdgeInsets.all(6.0),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            floatingLabelBehavior: FloatingLabelBehavior.always,
-                            labelText: "Genero",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10)),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Color(0xFF00A896), width: 2.0),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            focusColor: Colors.white,
-                          ),
-                        ),
+                      child: CustomTextField(
+                        labelText: "Genero",
+                        controller: generoController,
+                        initialValue:
+                            getInitialValue(dados[pacienteId], 'genero'),
                       ),
                     ),
                   ],
@@ -151,77 +126,29 @@ class PerfilPaciente extends StatelessWidget {
                   children: [
                     Expanded(
                       flex: 2,
-                      child: Padding(
-                        padding: const EdgeInsets.all(6.0),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            floatingLabelBehavior: FloatingLabelBehavior.always,
-                            labelText: "Etnia",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10)),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Color(0xFF00A896), width: 2.0),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            focusColor: Colors.white,
-                          ),
-                        ),
+                      child: CustomTextField(
+                        labelText: "Etnia",
+                        controller: etniaController,
+                        initialValue:
+                            getInitialValue(dados[pacienteId], 'etnia'),
                       ),
                     ),
                     Expanded(
                       flex: 1,
-                      child: Padding(
-                        padding: const EdgeInsets.all(6.0),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            floatingLabelBehavior: FloatingLabelBehavior.always,
-                            labelText: "Altura",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10)),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Color(0xFF00A896), width: 2.0),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            focusColor: Colors.white,
-                          ),
-                        ),
+                      child: CustomTextField(
+                        labelText: "Altura",
+                        controller: alturaController,
+                        initialValue:
+                            getInitialValue(dados[pacienteId], 'altura'),
                       ),
                     ),
                     Expanded(
                       flex: 1,
-                      child: Padding(
-                        padding: const EdgeInsets.all(6.0),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            floatingLabelBehavior: FloatingLabelBehavior.always,
-                            labelText: "Peso",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10)),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Color(0xFF00A896), width: 2.0),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            focusColor: Colors.white,
-                          ),
-                        ),
+                      child: CustomTextField(
+                        labelText: "Peso",
+                        controller: pesoController,
+                        initialValue:
+                            getInitialValue(dados[pacienteId], 'peso'),
                       ),
                     ),
                   ],
@@ -230,76 +157,28 @@ class PerfilPaciente extends StatelessWidget {
                   children: [
                     Expanded(
                       flex: 1,
-                      child: Padding(
-                        padding: const EdgeInsets.all(6.0),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            floatingLabelBehavior: FloatingLabelBehavior.always,
-                            labelText: "Religião",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10)),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Color(0xFF00A896), width: 2.0),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            focusColor: Colors.white,
-                          ),
-                        ),
+                      child: CustomTextField(
+                        labelText: "Religião",
+                        controller: religiaoController,
+                        initialValue:
+                            getInitialValue(dados[pacienteId], 'religiao'),
                       ),
                     ),
                     Expanded(
                       flex: 1,
-                      child: Padding(
-                        padding: const EdgeInsets.all(6.0),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            floatingLabelBehavior: FloatingLabelBehavior.always,
-                            labelText: "Estado Civil",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10)),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Color(0xFF00A896), width: 2.0),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            focusColor: Colors.white,
-                          ),
-                        ),
+                      child: CustomTextField(
+                        labelText: "Estado civil",
+                        controller: estadoCivilController,
+                        initialValue:
+                            getInitialValue(dados[pacienteId], 'estadoCivil'),
                       ),
                     ),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(6.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      floatingLabelBehavior: FloatingLabelBehavior.always,
-                      labelText: "Ocupação",
-                      labelStyle: TextStyle(color: Color(0xFF00A896)),
-                      fillColor: Colors.white,
-                      filled: true,
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFF00A896)),
-                          borderRadius: BorderRadius.circular(10)),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xFF00A896), width: 2.0),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      focusColor: Colors.white,
-                    ),
-                  ),
+                CustomTextField(
+                  labelText: "Profissões e horário de trabalho",
+                  controller: profissaoController,
+                  initialValue: getInitialValue(dados[pacienteId], 'profissao'),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -313,126 +192,54 @@ class PerfilPaciente extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(6.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      floatingLabelBehavior: FloatingLabelBehavior.always,
-                      labelText: "Endereço residencial",
-                      labelStyle: TextStyle(color: Color(0xFF00A896)),
-                      fillColor: Colors.white,
-                      filled: true,
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFF00A896)),
-                          borderRadius: BorderRadius.circular(10)),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xFF00A896), width: 2.0),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      focusColor: Colors.white,
-                    ),
-                  ),
+                CustomTextField(
+                  labelText: "Endereço",
+                  controller: enderecoController,
+                  initialValue: getInitialValue(dados[pacienteId], 'endereco'),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(6.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      floatingLabelBehavior: FloatingLabelBehavior.always,
-                      labelText: "Complemento",
-                      labelStyle: TextStyle(color: Color(0xFF00A896)),
-                      fillColor: Colors.white,
-                      filled: true,
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFF00A896)),
-                          borderRadius: BorderRadius.circular(10)),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xFF00A896), width: 2.0),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      focusColor: Colors.white,
-                    ),
-                  ),
+                CustomTextField(
+                  labelText: "Complemento",
+                  controller: complementoController,
+                  initialValue:
+                      getInitialValue(dados[pacienteId], 'complemento'),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(6.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      floatingLabelBehavior: FloatingLabelBehavior.always,
-                      labelText: ("Bairro"),
-                      labelStyle: TextStyle(color: Color(0xFF00A896)),
-                      fillColor: Colors.white,
-                      filled: true,
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFF00A896)),
-                          borderRadius: BorderRadius.circular(10)),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xFF00A896), width: 2.0),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      focusColor: Colors.white,
-                    ),
-                  ),
+                CustomTextField(
+                  labelText: "Bairro",
+                  controller: bairroController,
+                  initialValue: getInitialValue(dados[pacienteId], 'bairro'),
                 ),
                 Row(
                   children: [
                     Expanded(
                       flex: 5,
-                      child: Padding(
-                        padding: const EdgeInsets.all(6.0),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            floatingLabelBehavior: FloatingLabelBehavior.always,
-                            labelText: "Cidade",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10)),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Color(0xFF00A896), width: 2.0),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            focusColor: Colors.white,
-                          ),
-                        ),
+                      child: CustomTextField(
+                        labelText: "Cidade",
+                        controller: cidadeController,
+                        initialValue:
+                            getInitialValue(dados[pacienteId], 'cidade'),
                       ),
                     ),
                     Expanded(
                       flex: 2,
-                      child: Padding(
-                        padding: const EdgeInsets.all(6.0),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            floatingLabelBehavior: FloatingLabelBehavior.always,
-                            labelText: "Estado",
-                            labelStyle: TextStyle(color: Color(0xFF00A896)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Color(0xFF00A896)),
-                                borderRadius: BorderRadius.circular(10)),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Color(0xFF00A896), width: 2.0),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            focusColor: Colors.white,
-                          ),
-                        ),
+                      child: CustomTextField(
+                        labelText: "Estado",
+                        controller: estadoController,
+                        initialValue:
+                            getInitialValue(dados[pacienteId], 'estado'),
                       ),
                     ),
                   ],
                 ),
+                SizedBox(height: 50),
               ]),
             ),
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pushNamed(context, "/anamnese");
+          },
+          child: Icon(Icons.add),
         ));
   }
 }

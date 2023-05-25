@@ -35,7 +35,8 @@ class MyApp extends StatelessWidget {
         "/cadastro_pacientes": (context) => CadastroPacientes(),
         "/calendario": (context) => CalendarPage(),
         "/anamnese": (context) => AnamnesePage(),
-        "/perfil": (context) => PerfilPaciente()
+        "/perfil_paciente": (context) => PerfilPaciente(),
+        "/anamnese_geral": (context) => AnamneseGeralPage(),
       },
     );
   }

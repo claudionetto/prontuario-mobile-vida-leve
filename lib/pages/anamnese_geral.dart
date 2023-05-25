@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:vida_leve/utils/global.dart';
 
 import '../utils/appbar.dart';
 import '../utils/customtextfield.dart';
@@ -8,10 +9,7 @@ import '../utils/dados.dart';
 import '../utils/drawer.dart';
 
 class AnamneseGeralPage extends StatefulWidget {
-  final int pacienteId;
-
-  const AnamneseGeralPage({Key? key, required this.pacienteId})
-      : super(key: key);
+  const AnamneseGeralPage({super.key});
 
   @override
   State<AnamneseGeralPage> createState() => _AnamneseGeralPageState();
@@ -72,19 +70,13 @@ class _AnamneseGeralPageState extends State<AnamneseGeralPage> {
   TextEditingController fumanteController = TextEditingController();
   TextEditingController frequenciaAlcoolicaController = TextEditingController();
 
-  get pacienteId => widget.pacienteId;
+  final pacienteId = Globals.pacienteId;
 
   String getInitialValue(Map<String, dynamic> data, String key) {
     return data[key] != null ? data[key].toString() : '';
   }
 
   @override
-  void initState() {
-    super.initState();
-    // Acesse o valor de pacienteId usando widget.pacienteId
-    int pacienteId = widget.pacienteId;
-  }
-
   Widget build(BuildContext context) {
     return Scaffold(
       endDrawer: MyDrawer(),

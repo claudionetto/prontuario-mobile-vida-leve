@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:vida_leve/pages/anamnese_geral.dart';
+import 'package:vida_leve/pages/perfil_paciente_page.dart';
 import 'package:vida_leve/utils/appbar.dart';
 import 'package:vida_leve/utils/drawer.dart';
+import 'package:vida_leve/utils/global.dart';
 
 import '../utils/dados.dart';
 
@@ -72,13 +74,8 @@ class _PacientesState extends State<Pacientes> {
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            AnamneseGeralPage(pacienteId: index),
-                      ),
-                    );
+                    Navigator.pushNamed(context, '/perfil_paciente');
+                    Globals.pacienteId = index;
                   },
                   child: Container(
                     child: Padding(

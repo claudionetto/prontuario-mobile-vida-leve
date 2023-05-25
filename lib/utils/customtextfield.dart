@@ -20,7 +20,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   void initState() {
     super.initState();
-    widget.controller.text = widget.initialValue; // Usando o controller para definir o valor inicial
+    widget.controller.text =
+        widget.initialValue; // Usando o controller para definir o valor inicial
   }
 
   @override
