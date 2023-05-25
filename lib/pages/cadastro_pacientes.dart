@@ -82,6 +82,27 @@ class CadastroPacientes extends StatelessWidget {
                         ),
                       ),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.all(6.0),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          labelText: "Foto (URL)",
+                          labelStyle: TextStyle(color: Color(0xFF00A896)),
+                          fillColor: Colors.white,
+                          filled: true,
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Color(0xFF00A896)),
+                              borderRadius: BorderRadius.circular(10)),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color(0xFF00A896), width: 2.0),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          focusColor: Colors.white,
+                        ),
+                      ),
+                    ),
                     Row(
                       children: [
                         Expanded(

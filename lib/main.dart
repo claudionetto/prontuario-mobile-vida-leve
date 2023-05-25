@@ -5,11 +5,12 @@ import 'package:vida_leve/pages/cadastro_pacientes.dart';
 import 'package:vida_leve/pages/calendar_page.dart';
 import 'package:vida_leve/pages/login_page.dart';
 import 'package:vida_leve/pages/pacientes.dart';
+import 'package:vida_leve/pages/perfil_paciente_page.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 import 'pages/home_page.dart';
 
-void main() {
+void main() async {
   initializeDateFormatting().then((_) => runApp(const MyApp()));
 }
 
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         "/calendario": (context) => CalendarPage(),
         "/anamnese": (context) => AnamnesePage(),
         "/anamnese_geral": (context) => AnamneseGeralPage(),
+        "/perfil": (context) => PerfilPaciente()
       },
     );
   }

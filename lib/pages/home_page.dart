@@ -4,156 +4,143 @@ import 'package:vida_leve/utils/drawer.dart';
 import 'package:vida_leve/pages/pacientes.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        endDrawer: MyDrawer(),
-        appBar: MyAppBar(),
-        body: Center(
-            child: Column(
-          children: [
-            Expanded(
-              child: Container(
-                color: Colors.white,
-                child: Column(
-                  children: [
-                    const Flexible(
-                      flex: 1,
-                      child: SizedBox(height: 32.0),
-                    ),
-                    const SizedBox(height: 32.0),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        children: [
-                          const Text(
-                            'Agenda',
-                            style: TextStyle(
-                              fontSize: 30.0,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Montserrat',
-                            ),
-                          ),
-                          const Spacer(),
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: const Color.fromRGBO(0, 168, 150, 100)),
-                            child: IconButton(
-                              icon: const Icon(Icons.add),
-                              iconSize: 30,
-                              color: Colors.white,
-                              onPressed: () {
-                                Navigator.pushReplacementNamed(
-                                    context, "/calendario");
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                        height:
-                            16.0), // Espaço entre os cards e a margem inferior
-                    Container(
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(16.0),
-                          bottomLeft: Radius.circular(16.0),
-                        ),
+      endDrawer: MyDrawer(),
+      appBar: MyAppBar(),
+      body: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: Column(children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Agenda Semanal',
+                style: TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF00A896),
+                  fontFamily: 'Montserrat',
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10.0),
+          Expanded(
+            flex: 9,
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 16.0),
+              child: SizedBox(
+                height: 400.0,
+                child: ListView.builder(
+                  scrollDirection: Axis.vertical,
+                  itemCount: 10,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Container(
+                      // diminui a largura do card
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 8.0, vertical: 5),
+                      decoration: BoxDecoration(
+                        color: index % 2 == 0
+                            ? Color(0xFFE78F8F)
+                            : Color(0xFF088EC4),
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 8.0, vertical: 16.0),
-                        child: SizedBox(
-                          height: 150.0,
-                          child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: 5,
-                            itemBuilder: (BuildContext context, int index) {
-                              return Container(
-                                width: 105.0, // diminui a largura do card
-                                margin:
-                                    const EdgeInsets.symmetric(horizontal: 8.0),
-                                decoration: BoxDecoration(
-                                  color:
-                                      index % 2 == 0 ? Colors.red : Colors.blue,
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  border: Border.all(
-                                    color: Colors.black,
-                                    width: 2.0,
+                        padding: const EdgeInsets.all(24.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Título do Card ${index + 1}',
+                                  style: const TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
                                   ),
                                 ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Título do Card ${index + 1}',
-                                        style: const TextStyle(
-                                          fontSize: 16.0,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                      const SizedBox(height: 8.0),
-                                      Text(
-                                        'Descrição do Card ${index + 1}',
-                                        style: const TextStyle(
-                                          fontSize: 12.0,
-                                        ),
-                                      ),
-                                    ],
+                                Text(
+                                  '10/03  15:00',
+                                  style: const TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
                                   ),
                                 ),
-                              );
-                            },
-                          ),
+                              ],
+                            ),
+                            const SizedBox(height: 8.0),
+                            Text(
+                              'Descrição do Card ${index + 1}',
+                              style: const TextStyle(
+                                fontSize: 14.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ),
-                  ],
+                    );
+                  },
                 ),
               ),
             ),
-            Expanded(
-              child: Container(
-                //color: Colors.white,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
+          ),
+          const SizedBox(height: 10.0),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: double.infinity,
+                  height: 40,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, "/calendario");
+                    },
+                    style: ElevatedButton.styleFrom(
+                      textStyle: const TextStyle(fontSize: 20.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    child: const Text(
+                      'Agenda Completa',
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10.0),
+                SizedBox(
+                  width: double.infinity,
+                  height: 40,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, "/pacientes");
+                    },
+                    style: ElevatedButton.styleFrom(
+                      textStyle: const TextStyle(fontSize: 20.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    child: const Text(
                       'Pacientes',
-                      style: TextStyle(
-                        fontSize: 24.0,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Montserrat',
-                      ),
                     ),
-                    const SizedBox(height: 30.0),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushReplacementNamed(context, "/pacientes");
-                      },
-                      style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 60.0, vertical: 20.0),
-                        textStyle: const TextStyle(fontSize: 20.0),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                      ),
-                      child: const Text(
-                        'Pacientes',
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-              ),
+              ],
             ),
-          ],
-        )));
+          ),
+        ]),
+      ),
+    );
   }
 }

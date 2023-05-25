@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 
 import '../utils/appbar.dart';
 import '../utils/customtextfield.dart';
+import '../utils/dados.dart';
 import '../utils/drawer.dart';
 
 class AnamneseGeralPage extends StatefulWidget {
@@ -68,56 +69,8 @@ class _AnamneseGeralPageState extends State<AnamneseGeralPage> {
   TextEditingController fumaneteController = TextEditingController();
   TextEditingController frequenciaAlcoolicaController = TextEditingController();
 
-  String email = "veraalmeida@gmail.com";
-  String nomeCompleto = "Vera Almeida";
-  String dataNascimento = "07/02/1990";
-  String idade = "33";
-  String genero = "Feminino";
-  String profissao = "Professora 07:00 - 17:00";
-  String estadoCivil = "Solteira";
-  String etnia = "Caucasiana";
-  String religiao = "Cristã";
-  String naturalidade = "Brasileira";
-  String endereco = "Rua Amado Batista";
-  String bairro = "Bairro Roseira";
-  String cidade = "São João da Boa Vista";
-  String telefoneResidencial = "3633-9425";
-  String telefoneCelular = "19 98990-2233";
-  String escolaridade = "Ensino Superior completo";
-  String trabalhaAtualmente = "Sim";
-  String trabalhoAtivoParado = "Parado";
-  String habitos = "Usar muito as Redes Sociais";
-  String rendaFamiliar = "15 mil reais";
-  String pressaoArterial = "";
-  String frequenciaCardiaca = "";
-  String glicemiaCapilar = "";
-  String pulso = "";
-  String temperatura = "";
-  String saturacao = "";
-  String frequenciaRespiratoria = "";
-  String dores = "";
-  String queixaPrincipal = "";
-  String patologias = "";
-  String antecedentes = "";
-  String condicoesGerais = "";
-  String marcapasso = "";
-  String anticoncepcional = "";
-  String cicloMenstrual = "";
-  String gestante = "";
-  String filhos = "";
-  String alergias = "";
-  String proteses = "";
-  String sono = "";
-  String funcionamentoIntestinal = "";
-  String eliminacaoFisiologica = "";
-  String locomocao = "";
-  String tendenciaGanhoPeso = "";
-  String efGeral = "";
-  String efOlhos = "";
-  String efPescoco = "";
-  String estadoHigiene = "";
-  String fuamente = "";
-  String frequenciaAlcoolica = "";
+  int pacienteId = 0
+;
 
   @override
   Widget build(BuildContext context) {
@@ -132,12 +85,12 @@ class _AnamneseGeralPageState extends State<AnamneseGeralPage> {
               children: [
                 CircleAvatar(
                   radius: 45, // Define o raio do avatar
-                  backgroundImage: NetworkImage(
-                      "https://media.istockphoto.com/id/1396403999/pt/foto/look-to-the-future-with-hope.jpg?s=612x612&w=is&k=20&c=oIRcJ6M0moRzcSsDH1SfEYVZ0CtBlZwbY_lIdzx256c="),
+                  backgroundImage:
+                      NetworkImage(dados[pacienteId]['foto'].toString()),
                 ),
                 SizedBox(height: 15),
                 Text(
-                  "Vera Almeida",
+                  dados[pacienteId]['nomeCompleto'].toString(),
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.w900,
@@ -195,207 +148,267 @@ class _AnamneseGeralPageState extends State<AnamneseGeralPage> {
                           CustomTextField(
                               labelText: "Email",
                               controller: emailController,
-                              initialValue: email),
+                              initialValue:
+                                  dados[pacienteId]['email'].toString()),
                           CustomTextField(
                               labelText: "Nome Completo",
                               controller: nomeCompletoController,
-                              initialValue: nomeCompleto),
+                              initialValue:
+                                  dados[pacienteId]['nomeCompleto'].toString()),
                           CustomTextField(
                               labelText: "Data de Nascimento",
                               controller: dataNascimentoController,
-                              initialValue: dataNascimento),
+                              initialValue: dados[pacienteId]['dataNascimento']
+                                  .toString()),
                           CustomTextField(
                               labelText: "Idade",
                               controller: idadeController,
-                              initialValue: idade),
+                              initialValue:
+                                  dados[pacienteId]['idade'].toString()),
                           CustomTextField(
                               labelText: "Genero",
                               controller: generoController,
-                              initialValue: genero),
+                              initialValue:
+                                  dados[pacienteId]['genero'].toString()),
                           CustomTextField(
                               labelText: "Profissões e horário de trabalho",
                               controller: profissaoController,
-                              initialValue: profissao),
+                              initialValue:
+                                  dados[pacienteId]['profissao'].toString()),
                           CustomTextField(
                               labelText: "Estado civil",
                               controller: estadoCivilController,
-                              initialValue: estadoCivil),
+                              initialValue:
+                                  dados[pacienteId]['estadoCivil'].toString()),
                           CustomTextField(
                               labelText: "Etnia",
                               controller: etniaController,
-                              initialValue: etnia),
+                              initialValue:
+                                  dados[pacienteId]['etnia'].toString()),
                           CustomTextField(
                               labelText: "Religião",
                               controller: religiaoController,
-                              initialValue: religiao),
+                              initialValue:
+                                  dados[pacienteId]['religiao'].toString()),
                           CustomTextField(
                               labelText: "Naturalidade",
                               controller: naturalidadeController,
-                              initialValue: naturalidade),
+                              initialValue:
+                                  dados[pacienteId]['naturalidade'].toString()),
                           CustomTextField(
                               labelText: "Endereço",
                               controller: enderecoController,
-                              initialValue: endereco),
+                              initialValue:
+                                  dados[pacienteId]['endereco'].toString()),
                           CustomTextField(
                               labelText: "Bairro",
                               controller: bairroController,
-                              initialValue: bairro),
+                              initialValue:
+                                  dados[pacienteId]['bairro'].toString()),
                           CustomTextField(
                               labelText: "Cidade",
                               controller: cidadeController,
-                              initialValue: cidade),
+                              initialValue:
+                                  dados[pacienteId]['cidade'].toString()),
                           CustomTextField(
                               labelText: "Telefone Residencial",
                               controller: telefoneResidencialController,
-                              initialValue: telefoneResidencial),
+                              initialValue: dados[pacienteId]
+                                      ['telefoneResidencial']
+                                  .toString()),
                           CustomTextField(
                               labelText: "Telefone Celular",
                               controller: telefoneCelularController,
-                              initialValue: telefoneCelular),
+                              initialValue: dados[pacienteId]['telefoneCelular']
+                                  .toString()),
                           CustomTextField(
                               labelText: "Escolaridade",
                               controller: escolaridadeController,
-                              initialValue: escolaridade),
+                              initialValue:
+                                  dados[pacienteId]['escolaridade'].toString()),
                           CustomTextField(
                               labelText: "Trabalha Atualmente",
                               controller: trabalhaAtualmenteController,
-                              initialValue: trabalhaAtualmente),
+                              initialValue: dados[pacienteId]
+                                      ['trabalhaAtualmente']
+                                  .toString()),
                           CustomTextField(
                               labelText: "Seu trabalho é ativo ou parado?",
                               controller: trabalhoAtivoParadoController,
-                              initialValue: trabalhoAtivoParado),
+                              initialValue: dados[pacienteId]
+                                      ['trabalhoAtivoParado']
+                                  .toString()),
                           CustomTextField(
                               labelText: "Hábitos",
                               controller: habitosController,
-                              initialValue: habitos),
+                              initialValue:
+                                  dados[pacienteId]['habitos'].toString()),
                           CustomTextField(
                               labelText: "Renda Familiar",
                               controller: rendaFamiliarController,
-                              initialValue: rendaFamiliar),
+                              initialValue: dados[pacienteId]['rendaFamiliar']
+                                  .toString()),
                           CustomTextField(
                               labelText: "Pressão Arterial",
                               controller: pressaoArterialController,
-                              initialValue: pressaoArterial),
+                              initialValue: dados[pacienteId]['pressaoArterial']
+                                  .toString()),
                           CustomTextField(
                               labelText: "Frequência Cardiaca",
                               controller: frequenciaCardiacaController,
-                              initialValue: frequenciaCardiaca),
+                              initialValue: dados[pacienteId]
+                                      ['frequenciaCardiaca']
+                                  .toString()),
                           CustomTextField(
                               labelText: "Glicemia Capilar",
                               controller: glicemiaCapilarController,
-                              initialValue: glicemiaCapilar),
+                              initialValue: dados[pacienteId]['glicemiaCapilar']
+                                  .toString()),
                           CustomTextField(
                               labelText: "Pulso",
                               controller: pulsoController,
-                              initialValue: ""),
+                              initialValue:
+                                  dados[pacienteId]['pulso'].toString()),
                           CustomTextField(
                               labelText: "Temperatura",
                               controller: temperaturaController,
-                              initialValue: ""),
+                              initialValue:
+                                  dados[pacienteId]['temperatura'].toString()),
                           CustomTextField(
                               labelText: "Saturação",
                               controller: saturacaoController,
-                              initialValue: ""),
+                              initialValue:
+                                  dados[pacienteId]['saturacao'].toString()),
                           CustomTextField(
                               labelText: "Frequência Respiratória",
                               controller: frequenciaRespiratoriaController,
-                              initialValue: ""),
+                              initialValue: dados[pacienteId]
+                                      ['frequenciaRespiratoria']
+                                  .toString()),
                           CustomTextField(
                               labelText: "Possui dor(es) ? Quais ?",
                               controller: doresController,
-                              initialValue: ""),
+                              initialValue:
+                                  dados[pacienteId]['dores'].toString()),
                           CustomTextField(
                               labelText: "Queixa principal",
                               controller: queixaPrincipalController,
-                              initialValue: ""),
+                              initialValue: dados[pacienteId]['queixaPrincipal']
+                                  .toString()),
                           CustomTextField(
                               labelText:
                                   "Patologias pregressas / Cirurgias Anteriores",
                               controller: patologiasController,
-                              initialValue: ""),
+                              initialValue:
+                                  dados[pacienteId]['patologias'].toString()),
                           CustomTextField(
                               labelText: "Antecedentes familiares",
                               controller: antecedentesController,
-                              initialValue: ""),
+                              initialValue:
+                                  dados[pacienteId]['antecedentes'].toString()),
                           CustomTextField(
                               labelText:
                                   "Condições gerais, medicamentos de uso continuo",
                               controller: condicoesGeraisController,
-                              initialValue: ""),
+                              initialValue: dados[pacienteId]['condicoesGerais']
+                                  .toString()),
                           CustomTextField(
                               labelText: "Portador de marcapasso ?",
                               controller: marcapassoController,
-                              initialValue: ""),
+                              initialValue:
+                                  dados[pacienteId]['marcapasso'].toString()),
                           CustomTextField(
                               labelText: "Faz uso de anticoncepcional ? Qual ?",
                               controller: anticoncepcionalController,
-                              initialValue: ""),
+                              initialValue: dados[pacienteId]
+                                      ['anticoncepcional']
+                                  .toString()),
                           CustomTextField(
                               labelText: "Possui ciclo menstrual regular ?",
                               controller: cicloMenstrualController,
-                              initialValue: ""),
+                              initialValue: dados[pacienteId]['cicloMenstrual']
+                                  .toString()),
                           CustomTextField(
                               labelText: "Gestante ?",
                               controller: gestanteController,
-                              initialValue: ""),
+                              initialValue:
+                                  dados[pacienteId]['gestante'].toString()),
                           CustomTextField(
                               labelText: "Possui filhos ? Quantos ?",
                               controller: filhosController,
-                              initialValue: ""),
+                              initialValue:
+                                  dados[pacienteId]['filhos'].toString()),
                           CustomTextField(
                               labelText: "Alergias",
                               controller: alergiasController,
-                              initialValue: ""),
+                              initialValue:
+                                  dados[pacienteId]['alergias'].toString()),
                           CustomTextField(
                               labelText: "Uso de próteses",
                               controller: protesesController,
-                              initialValue: ""),
+                              initialValue:
+                                  dados[pacienteId]['proteses'].toString()),
                           CustomTextField(
                               labelText: "Sono e Repouso? Horas por dia",
                               controller: sonoController,
-                              initialValue: ""),
+                              initialValue:
+                                  dados[pacienteId]['sono'].toString()),
                           CustomTextField(
                               labelText: "Funcionamento intestinal é regular ?",
                               controller: funcionamentoIntestinalController,
-                              initialValue: ""),
+                              initialValue: dados[pacienteId]
+                                      ['funcionamentoIntestinal']
+                                  .toString()),
                           CustomTextField(
                               labelText: "Eliminição Fisiológica",
                               controller: eliminacaoFisiologicaController,
-                              initialValue: ""),
+                              initialValue: dados[pacienteId]
+                                      ['eliminacaoFisiologica']
+                                  .toString()),
                           CustomTextField(
                               labelText: "Locomoção",
                               controller: locomocaoController,
-                              initialValue: ""),
+                              initialValue:
+                                  dados[pacienteId]['locomocao'].toString()),
                           CustomTextField(
                               labelText: "Tendência de ganho de peso",
                               controller: tendenciaGanhoPesoController,
-                              initialValue: ""),
+                              initialValue: dados[pacienteId]
+                                      ['tendenciaGanhoPeso']
+                                  .toString()),
                           CustomTextField(
                               labelText: "Exame Fisico: Estado Geral",
                               controller: efGeralController,
-                              initialValue: ""),
+                              initialValue:
+                                  dados[pacienteId]['efGeral'].toString()),
                           CustomTextField(
                               labelText: "E F: Olhos, Ouvidos, Boca e Nariz",
                               controller: efOlhosController,
-                              initialValue: ""),
+                              initialValue:
+                                  dados[pacienteId]['efOlhos'].toString()),
                           CustomTextField(
                               labelText:
                                   "E F: Pescoço, Respiração, Circulação e Pele",
                               controller: efPescocoController,
-                              initialValue: ""),
+                              initialValue:
+                                  dados[pacienteId]['efPescoco'].toString()),
                           CustomTextField(
                               labelText: "Estado de higiene",
                               controller: estadoHigieneController,
-                              initialValue: ""),
+                              initialValue: dados[pacienteId]['estadoHigiene']
+                                  .toString()),
                           CustomTextField(
                               labelText: "Fumante",
                               controller: fumaneteController,
-                              initialValue: ""),
+                              initialValue:
+                                  dados[pacienteId]['fumante'].toString()),
                           CustomTextField(
                               labelText:
                                   "Sua frequência do uso de bebida alcoólica",
                               controller: frequenciaAlcoolicaController,
-                              initialValue: ""),
+                              initialValue: dados[pacienteId]
+                                      ['frequenciaAlcoolica']
+                                  .toString()),
                         ],
                       ),
                     ),
@@ -409,58 +422,71 @@ class _AnamneseGeralPageState extends State<AnamneseGeralPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-            String email = emailController.text;
-            String nomeCompleto = nomeCompletoController.text;
-            String dataNascimento = dataNascimentoController.text;
-            String idade = idadeController.text;
-            String genero = generoController.text;
-            String profissao = profissaoController.text;
-            String estadoCivil = estadoCivilController.text;
-            String etnia = etniaController.text;
-            String religiao = religiaoController.text;
-            String naturalidade = naturalidadeController.text;
-            String endereco = enderecoController.text;
-            String bairro = bairroController.text;
-            String cidade = cidadeController.text;
-            String telefoneResidencial = telefoneResidencialController.text;
-            String telefoneCelular = telefoneCelularController.text;
-            String escolaridade = escolaridadeController.text;
-            String trabalhaAtualmente = trabalhaAtualmenteController.text;
-            String trabalhoAtivoParado = trabalhoAtivoParadoController.text;
-            String habitos = habitosController.text;
-            String rendaFamiliar = rendaFamiliarController.text;
-            String pressaoArterial = pressaoArterialController.text;
-            String frequenciaCardiaca = frequenciaCardiacaController.text;
-            String glicemiaCapilar = glicemiaCapilarController.text;
-            String pulso = pulsoController.text;
-            String temperatura = temperaturaController.text;
-            String saturacao = saturacaoController.text;
-            String frequenciaRespiratoria =
+            dados[pacienteId]['email'] = emailController.text;
+            dados[pacienteId]['nomeCompleto'] = nomeCompletoController.text;
+            dados[pacienteId]['dataNascimento'] = dataNascimentoController.text;
+            dados[pacienteId]['idade'] = idadeController.text;
+            dados[pacienteId]['genero'] = generoController.text;
+            dados[pacienteId]['profissao'] = profissaoController.text;
+            dados[pacienteId]['estadoCivil'] = estadoCivilController.text;
+            dados[pacienteId]['etnia'] = etniaController.text;
+            dados[pacienteId]['religiao'] = religiaoController.text;
+            dados[pacienteId]['naturalidade'] = naturalidadeController.text;
+            dados[pacienteId]['endereco'] = enderecoController.text;
+            dados[pacienteId]['bairro'] = bairroController.text;
+            dados[pacienteId]['cidade'] = cidadeController.text;
+            dados[pacienteId]['telefoneResidencial'] =
+                telefoneResidencialController.text;
+            dados[pacienteId]['telefoneCelular'] =
+                telefoneCelularController.text;
+            dados[pacienteId]['escolaridade'] = escolaridadeController.text;
+            dados[pacienteId]['trabalhaAtualmente'] =
+                trabalhaAtualmenteController.text;
+            dados[pacienteId]['trabalhoAtivoParado'] =
+                trabalhoAtivoParadoController.text;
+            dados[pacienteId]['habitos'] = habitosController.text;
+            dados[pacienteId]['rendaFamiliar'] = rendaFamiliarController.text;
+            dados[pacienteId]['pressaoArterial'] =
+                pressaoArterialController.text;
+            dados[pacienteId]['frequenciaCardiaca'] =
+                frequenciaCardiacaController.text;
+            dados[pacienteId]['glicemiaCapilar'] =
+                glicemiaCapilarController.text;
+            dados[pacienteId]['pulso'] = pulsoController.text;
+            dados[pacienteId]['temperatura'] = temperaturaController.text;
+            dados[pacienteId]['saturacao'] = saturacaoController.text;
+            dados[pacienteId]['frequenciaRespiratoria'] =
                 frequenciaRespiratoriaController.text;
-            String dores = doresController.text;
-            String queixaPrincipal = queixaPrincipalController.text;
-            String patologias = patologiasController.text;
-            String antecedentes = antecedentesController.text;
-            String condicoesGerais = condicoesGeraisController.text;
-            String marcapasso = marcapassoController.text;
-            String anticoncepcional = anticoncepcionalController.text;
-            String cicloMenstrual = cicloMenstrualController.text;
-            String gestante = gestanteController.text;
-            String filhos = filhosController.text;
-            String alergias = alergiasController.text;
-            String proteses = protesesController.text;
-            String sono = sonoController.text;
-            String funcionamentoIntestinal =
+            dados[pacienteId]['dores'] = doresController.text;
+            dados[pacienteId]['queixaPrincipal'] =
+                queixaPrincipalController.text;
+            dados[pacienteId]['patologias'] = patologiasController.text;
+            dados[pacienteId]['antecedentes'] = antecedentesController.text;
+            dados[pacienteId]['condicoesGerais'] =
+                condicoesGeraisController.text;
+            dados[pacienteId]['marcapasso'] = marcapassoController.text;
+            dados[pacienteId]['anticoncepcional'] =
+                anticoncepcionalController.text;
+            dados[pacienteId]['cicloMenstrual'] = cicloMenstrualController.text;
+            dados[pacienteId]['gestante'] = gestanteController.text;
+            dados[pacienteId]['filhos'] = filhosController.text;
+            dados[pacienteId]['alergias'] = alergiasController.text;
+            dados[pacienteId]['proteses'] = protesesController.text;
+            dados[pacienteId]['sono'] = sonoController.text;
+            dados[pacienteId]['funcionamentoIntestinal'] =
                 funcionamentoIntestinalController.text;
-            String eliminacaoFisiologica = eliminacaoFisiologicaController.text;
-            String locomocao = locomocaoController.text;
-            String tendenciaGanhoPeso = tendenciaGanhoPesoController.text;
-            String efGeral = efGeralController.text;
-            String efOlhos = efOlhosController.text;
-            String efPescoco = efPescocoController.text;
-            String estadoHigiene = estadoHigieneController.text;
-            String fuamente = fumaneteController.text;
-            String frequenciaAlcoolica = frequenciaAlcoolicaController.text;
+            dados[pacienteId]['eliminacaoFisiologica'] =
+                eliminacaoFisiologicaController.text;
+            dados[pacienteId]['locomocao'] = locomocaoController.text;
+            dados[pacienteId]['tendenciaGanhoPeso'] =
+                tendenciaGanhoPesoController.text;
+            dados[pacienteId]['efGeral'] = efGeralController.text;
+            dados[pacienteId]['efOlhos'] = efOlhosController.text;
+            dados[pacienteId]['efPescoco'] = efPescocoController.text;
+            dados[pacienteId]['estadoHigiene'] = estadoHigieneController.text;
+            dados[pacienteId]['fumante'] = fumaneteController.text;
+            dados[pacienteId]['frequenciaAlcoolica'] =
+                frequenciaAlcoolicaController.text;
           });
 
           ScaffoldMessenger.of(context).showSnackBar(
@@ -470,7 +496,14 @@ class _AnamneseGeralPageState extends State<AnamneseGeralPage> {
                 'Atualizações feitas',
                 textAlign: TextAlign.center,
               ),
-              duration: Duration(seconds: 2), // Define a duração de 2 segundos
+              duration: Duration(seconds: 3),
+              action: SnackBarAction(
+                label: 'X',
+                textColor: Colors.white,
+                onPressed: () {
+                  ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                },
+              ),
             ),
           );
         },

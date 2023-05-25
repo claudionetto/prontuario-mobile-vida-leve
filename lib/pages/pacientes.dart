@@ -2,18 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:vida_leve/utils/appbar.dart';
 import 'package:vida_leve/utils/drawer.dart';
 
+import '../utils/dados.dart';
+
 class Pacientes extends StatefulWidget {
   @override
   _PacientesState createState() => _PacientesState();
 }
 
 class _PacientesState extends State<Pacientes> {
-  List<Map<String, dynamic>> dados = [
-    {'nome': 'Fulano', 'descricao': 'Descrição do Fulano', 'imagem': ' '},
-    {'nome': 'Ciclano', 'descricao': 'Descrição do Ciclano', 'imagem': ' '},
-    {'nome': 'Beltrano', 'descricao': 'Descrição do Beltrano', 'imagem': ' '},
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,7 +82,8 @@ class _PacientesState extends State<Pacientes> {
                           shape: BoxShape.circle,
                           image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: NetworkImage(dados[index]['imagem']),
+                            image:
+                                NetworkImage(dados[index]['foto'].toString()),
                           ),
                         ),
                       ),
@@ -95,13 +92,13 @@ class _PacientesState extends State<Pacientes> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            dados[index]['nome'],
+                            dados[index]['nomeCompleto'].toString(),
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.bold),
                           ),
                           SizedBox(height: 8),
                           Text(
-                            dados[index]['descricao'],
+                            dados[index]['descricao'].toString(),
                             style: TextStyle(fontSize: 16),
                           ),
                         ],
