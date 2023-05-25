@@ -13,6 +13,12 @@ class Pacientes extends StatefulWidget {
 }
 
 class _PacientesState extends State<Pacientes> {
+  void initState() {
+    super.initState();
+    // Chame a função desejada aqui
+    Globals.isEditing = false;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

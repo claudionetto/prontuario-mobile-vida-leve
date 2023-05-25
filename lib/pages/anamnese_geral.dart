@@ -76,6 +76,96 @@ class _AnamneseGeralPageState extends State<AnamneseGeralPage> {
     return data[key] != null ? data[key].toString() : '';
   }
 
+  void _toggleEditing() {
+    if (Globals.isEditing) {
+      dados[pacienteId]['email'] = emailController.text;
+      dados[pacienteId]['nomeCompleto'] = nomeCompletoController.text;
+      dados[pacienteId]['dataNascimento'] = dataNascimentoController.text;
+      dados[pacienteId]['idade'] = idadeController.text;
+      dados[pacienteId]['genero'] = generoController.text;
+      dados[pacienteId]['profissao'] = profissaoController.text;
+      dados[pacienteId]['estadoCivil'] = estadoCivilController.text;
+      dados[pacienteId]['etnia'] = etniaController.text;
+      dados[pacienteId]['religiao'] = religiaoController.text;
+      dados[pacienteId]['naturalidade'] = naturalidadeController.text;
+      dados[pacienteId]['endereco'] = enderecoController.text;
+      dados[pacienteId]['bairro'] = bairroController.text;
+      dados[pacienteId]['cidade'] = cidadeController.text;
+      dados[pacienteId]['telefoneResidencial'] =
+          telefoneResidencialController.text;
+      dados[pacienteId]['telefoneCelular'] = telefoneCelularController.text;
+      dados[pacienteId]['escolaridade'] = escolaridadeController.text;
+      dados[pacienteId]['trabalhaAtualmente'] =
+          trabalhaAtualmenteController.text;
+      dados[pacienteId]['trabalhoAtivoParado'] =
+          trabalhoAtivoParadoController.text;
+      dados[pacienteId]['habitos'] = habitosController.text;
+      dados[pacienteId]['rendaFamiliar'] = rendaFamiliarController.text;
+      dados[pacienteId]['pressaoArterial'] = pressaoArterialController.text;
+      dados[pacienteId]['frequenciaCardiaca'] =
+          frequenciaCardiacaController.text;
+      dados[pacienteId]['glicemiaCapilar'] = glicemiaCapilarController.text;
+      dados[pacienteId]['pulso'] = pulsoController.text;
+      dados[pacienteId]['temperatura'] = temperaturaController.text;
+      dados[pacienteId]['saturacao'] = saturacaoController.text;
+      dados[pacienteId]['frequenciaRespiratoria'] =
+          frequenciaRespiratoriaController.text;
+      dados[pacienteId]['dores'] = doresController.text;
+      dados[pacienteId]['queixaPrincipal'] = queixaPrincipalController.text;
+      dados[pacienteId]['patologias'] = patologiasController.text;
+      dados[pacienteId]['antecedentes'] = antecedentesController.text;
+      dados[pacienteId]['condicoesGerais'] = condicoesGeraisController.text;
+      dados[pacienteId]['marcapasso'] = marcapassoController.text;
+      dados[pacienteId]['anticoncepcional'] = anticoncepcionalController.text;
+      dados[pacienteId]['cicloMenstrual'] = cicloMenstrualController.text;
+      dados[pacienteId]['gestante'] = gestanteController.text;
+      dados[pacienteId]['filhos'] = filhosController.text;
+      dados[pacienteId]['alergias'] = alergiasController.text;
+      dados[pacienteId]['proteses'] = protesesController.text;
+      dados[pacienteId]['sono'] = sonoController.text;
+      dados[pacienteId]['funcionamentoIntestinal'] =
+          funcionamentoIntestinalController.text;
+      dados[pacienteId]['eliminacaoFisiologica'] =
+          eliminacaoFisiologicaController.text;
+      dados[pacienteId]['locomocao'] = locomocaoController.text;
+      dados[pacienteId]['tendenciaGanhoPeso'] =
+          tendenciaGanhoPesoController.text;
+      dados[pacienteId]['efGeral'] = efGeralController.text;
+      dados[pacienteId]['efOlhos'] = efOlhosController.text;
+      dados[pacienteId]['efPescoco'] = efPescocoController.text;
+      dados[pacienteId]['estadoHigiene'] = estadoHigieneController.text;
+      dados[pacienteId]['fumante'] = fumanteController.text;
+      dados[pacienteId]['frequenciaAlcoolica'] =
+          frequenciaAlcoolicaController.text;
+
+      setState(() {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            backgroundColor: Colors.green,
+            content: Text(
+              'Atualizações feitas',
+              textAlign: TextAlign.center,
+            ),
+            duration: Duration(seconds: 3),
+            action: SnackBarAction(
+              label: 'X',
+              textColor: Colors.white,
+              onPressed: () {
+                ScaffoldMessenger.of(context).hideCurrentSnackBar();
+              },
+            ),
+          ),
+        );
+
+        Globals.isEditing = false;
+      });
+    } else {
+      setState(() {
+        Globals.isEditing = true;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -464,94 +554,8 @@ class _AnamneseGeralPageState extends State<AnamneseGeralPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            dados[pacienteId]['email'] = emailController.text;
-            dados[pacienteId]['nomeCompleto'] = nomeCompletoController.text;
-            dados[pacienteId]['dataNascimento'] = dataNascimentoController.text;
-            dados[pacienteId]['idade'] = idadeController.text;
-            dados[pacienteId]['genero'] = generoController.text;
-            dados[pacienteId]['profissao'] = profissaoController.text;
-            dados[pacienteId]['estadoCivil'] = estadoCivilController.text;
-            dados[pacienteId]['etnia'] = etniaController.text;
-            dados[pacienteId]['religiao'] = religiaoController.text;
-            dados[pacienteId]['naturalidade'] = naturalidadeController.text;
-            dados[pacienteId]['endereco'] = enderecoController.text;
-            dados[pacienteId]['bairro'] = bairroController.text;
-            dados[pacienteId]['cidade'] = cidadeController.text;
-            dados[pacienteId]['telefoneResidencial'] =
-                telefoneResidencialController.text;
-            dados[pacienteId]['telefoneCelular'] =
-                telefoneCelularController.text;
-            dados[pacienteId]['escolaridade'] = escolaridadeController.text;
-            dados[pacienteId]['trabalhaAtualmente'] =
-                trabalhaAtualmenteController.text;
-            dados[pacienteId]['trabalhoAtivoParado'] =
-                trabalhoAtivoParadoController.text;
-            dados[pacienteId]['habitos'] = habitosController.text;
-            dados[pacienteId]['rendaFamiliar'] = rendaFamiliarController.text;
-            dados[pacienteId]['pressaoArterial'] =
-                pressaoArterialController.text;
-            dados[pacienteId]['frequenciaCardiaca'] =
-                frequenciaCardiacaController.text;
-            dados[pacienteId]['glicemiaCapilar'] =
-                glicemiaCapilarController.text;
-            dados[pacienteId]['pulso'] = pulsoController.text;
-            dados[pacienteId]['temperatura'] = temperaturaController.text;
-            dados[pacienteId]['saturacao'] = saturacaoController.text;
-            dados[pacienteId]['frequenciaRespiratoria'] =
-                frequenciaRespiratoriaController.text;
-            dados[pacienteId]['dores'] = doresController.text;
-            dados[pacienteId]['queixaPrincipal'] =
-                queixaPrincipalController.text;
-            dados[pacienteId]['patologias'] = patologiasController.text;
-            dados[pacienteId]['antecedentes'] = antecedentesController.text;
-            dados[pacienteId]['condicoesGerais'] =
-                condicoesGeraisController.text;
-            dados[pacienteId]['marcapasso'] = marcapassoController.text;
-            dados[pacienteId]['anticoncepcional'] =
-                anticoncepcionalController.text;
-            dados[pacienteId]['cicloMenstrual'] = cicloMenstrualController.text;
-            dados[pacienteId]['gestante'] = gestanteController.text;
-            dados[pacienteId]['filhos'] = filhosController.text;
-            dados[pacienteId]['alergias'] = alergiasController.text;
-            dados[pacienteId]['proteses'] = protesesController.text;
-            dados[pacienteId]['sono'] = sonoController.text;
-            dados[pacienteId]['funcionamentoIntestinal'] =
-                funcionamentoIntestinalController.text;
-            dados[pacienteId]['eliminacaoFisiologica'] =
-                eliminacaoFisiologicaController.text;
-            dados[pacienteId]['locomocao'] = locomocaoController.text;
-            dados[pacienteId]['tendenciaGanhoPeso'] =
-                tendenciaGanhoPesoController.text;
-            dados[pacienteId]['efGeral'] = efGeralController.text;
-            dados[pacienteId]['efOlhos'] = efOlhosController.text;
-            dados[pacienteId]['efPescoco'] = efPescocoController.text;
-            dados[pacienteId]['estadoHigiene'] = estadoHigieneController.text;
-            dados[pacienteId]['fumante'] = fumanteController.text;
-            dados[pacienteId]['frequenciaAlcoolica'] =
-                frequenciaAlcoolicaController.text;
-          });
-
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              backgroundColor: Colors.green,
-              content: Text(
-                'Atualizações feitas',
-                textAlign: TextAlign.center,
-              ),
-              duration: Duration(seconds: 3),
-              action: SnackBarAction(
-                label: 'X',
-                textColor: Colors.white,
-                onPressed: () {
-                  ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                },
-              ),
-            ),
-          );
-        },
-        child: Icon(Icons.save),
+        onPressed: _toggleEditing,
+        child: Globals.isEditing ? Icon(Icons.save) : Icon(Icons.edit),
       ),
     );
   }

@@ -2,8 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:vida_leve/utils/appbar.dart';
 import 'package:vida_leve/utils/drawer.dart';
 import 'package:vida_leve/pages/pacientes.dart';
+import 'package:vida_leve/utils/global.dart';
 
-class AnamnesePage extends StatelessWidget {
+class AnamnesePage extends StatefulWidget {
+  @override
+  State<AnamnesePage> createState() => _AnamnesePageState();
+}
+
+class _AnamnesePageState extends State<AnamnesePage> {
+  void initState() {
+    super.initState();
+    // Chame a função desejada aqui
+    Globals.isEditing = false;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

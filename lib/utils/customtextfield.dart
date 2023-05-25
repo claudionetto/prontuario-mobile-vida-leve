@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vida_leve/utils/global.dart';
 
 class CustomTextField extends StatefulWidget {
   final String labelText;
@@ -29,6 +30,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return Padding(
       padding: const EdgeInsets.all(6.0),
       child: TextFormField(
+        enabled: Globals.isEditing,
         controller: widget.controller, // Usando o controller fornecido
         decoration: InputDecoration(
           floatingLabelBehavior: FloatingLabelBehavior.always,
