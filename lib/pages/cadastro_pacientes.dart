@@ -2,10 +2,41 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:vida_leve/utils/appbar.dart';
+import 'package:vida_leve/utils/dados.dart';
 import 'package:vida_leve/utils/drawer.dart';
 
-class CadastroPacientes extends StatelessWidget {
+class CadastroPacientes extends StatefulWidget {
   const CadastroPacientes({super.key});
+
+  @override
+  State<CadastroPacientes> createState() => _CadastroPacientesState();
+}
+
+class _CadastroPacientesState extends State<CadastroPacientes> {
+  TextEditingController nomeCompletoController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController fotoController = TextEditingController();
+  TextEditingController dataNascimentoController = TextEditingController();
+  TextEditingController idadeController = TextEditingController();
+  TextEditingController naturalidadeController = TextEditingController();
+  TextEditingController generoController = TextEditingController();
+  TextEditingController etniaController = TextEditingController();
+
+  TextEditingController alturaController = TextEditingController();
+  TextEditingController pesoController = TextEditingController();
+  TextEditingController religiaoController = TextEditingController();
+
+  TextEditingController estadoCivilController = TextEditingController();
+  TextEditingController profissaoController = TextEditingController();
+  TextEditingController enderecoController = TextEditingController();
+  TextEditingController complementoController = TextEditingController();
+  TextEditingController bairroController = TextEditingController();
+  TextEditingController cidadeController = TextEditingController();
+  TextEditingController estadoController = TextEditingController();
+  TextEditingController telefoneCelularController = TextEditingController();
+  TextEditingController telefoneResidencialController = TextEditingController();
+
+  TextEditingController escolaridadeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -64,9 +95,10 @@ class CadastroPacientes extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(6.0),
                       child: TextFormField(
+                        controller: nomeCompletoController,
                         decoration: InputDecoration(
                           floatingLabelBehavior: FloatingLabelBehavior.always,
-                          labelText: "Nome",
+                          labelText: "Nome Completo",
                           labelStyle: TextStyle(color: Color(0xFF00A896)),
                           fillColor: Colors.white,
                           filled: true,
@@ -85,6 +117,7 @@ class CadastroPacientes extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(6.0),
                       child: TextFormField(
+                        controller: fotoController,
                         decoration: InputDecoration(
                           floatingLabelBehavior: FloatingLabelBehavior.always,
                           labelText: "Foto (URL)",
@@ -110,10 +143,11 @@ class CadastroPacientes extends StatelessWidget {
                           child: Padding(
                               padding: const EdgeInsets.all(6.0),
                               child: TextFormField(
+                                controller: dataNascimentoController,
                                 decoration: InputDecoration(
                                   floatingLabelBehavior:
                                       FloatingLabelBehavior.always,
-                                  labelText: "Nascimento",
+                                  labelText: "Data de Nascimento",
                                   labelStyle:
                                       TextStyle(color: Color(0xFF00A896)),
                                   fillColor: Colors.white,
@@ -137,6 +171,7 @@ class CadastroPacientes extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
+                              controller: idadeController,
                               decoration: InputDecoration(
                                 floatingLabelBehavior:
                                     FloatingLabelBehavior.always,
@@ -167,6 +202,7 @@ class CadastroPacientes extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
+                              controller: naturalidadeController,
                               decoration: InputDecoration(
                                 floatingLabelBehavior:
                                     FloatingLabelBehavior.always,
@@ -193,6 +229,7 @@ class CadastroPacientes extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
+                              controller: generoController,
                               decoration: InputDecoration(
                                 floatingLabelBehavior:
                                     FloatingLabelBehavior.always,
@@ -223,6 +260,7 @@ class CadastroPacientes extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
+                              controller: etniaController,
                               decoration: InputDecoration(
                                 floatingLabelBehavior:
                                     FloatingLabelBehavior.always,
@@ -249,6 +287,7 @@ class CadastroPacientes extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
+                              controller: alturaController,
                               decoration: InputDecoration(
                                 floatingLabelBehavior:
                                     FloatingLabelBehavior.always,
@@ -275,6 +314,7 @@ class CadastroPacientes extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
+                              controller: pesoController,
                               decoration: InputDecoration(
                                 floatingLabelBehavior:
                                     FloatingLabelBehavior.always,
@@ -305,6 +345,7 @@ class CadastroPacientes extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
+                              controller: religiaoController,
                               decoration: InputDecoration(
                                 floatingLabelBehavior:
                                     FloatingLabelBehavior.always,
@@ -331,6 +372,7 @@ class CadastroPacientes extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
+                              controller: estadoCivilController,
                               decoration: InputDecoration(
                                 floatingLabelBehavior:
                                     FloatingLabelBehavior.always,
@@ -357,9 +399,10 @@ class CadastroPacientes extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(6.0),
                       child: TextFormField(
+                        controller: profissaoController,
                         decoration: InputDecoration(
                           floatingLabelBehavior: FloatingLabelBehavior.always,
-                          labelText: "Ocupação",
+                          labelText: "Profissão / Horário de Trabalho",
                           labelStyle: TextStyle(color: Color(0xFF00A896)),
                           fillColor: Colors.white,
                           filled: true,
@@ -390,6 +433,29 @@ class CadastroPacientes extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(6.0),
                       child: TextFormField(
+                        controller: emailController,
+                        decoration: InputDecoration(
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          labelText: "Email",
+                          labelStyle: TextStyle(color: Color(0xFF00A896)),
+                          fillColor: Colors.white,
+                          filled: true,
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Color(0xFF00A896)),
+                              borderRadius: BorderRadius.circular(10)),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color(0xFF00A896), width: 2.0),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          focusColor: Colors.white,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(6.0),
+                      child: TextFormField(
+                        controller: enderecoController,
                         decoration: InputDecoration(
                           floatingLabelBehavior: FloatingLabelBehavior.always,
                           labelText: "Endereço residencial",
@@ -411,6 +477,7 @@ class CadastroPacientes extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(6.0),
                       child: TextFormField(
+                        controller: complementoController,
                         decoration: InputDecoration(
                           floatingLabelBehavior: FloatingLabelBehavior.always,
                           labelText: "Complemento",
@@ -432,6 +499,7 @@ class CadastroPacientes extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(6.0),
                       child: TextFormField(
+                        controller: bairroController,
                         decoration: InputDecoration(
                           floatingLabelBehavior: FloatingLabelBehavior.always,
                           labelText: ("Bairro"),
@@ -457,6 +525,7 @@ class CadastroPacientes extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
+                              controller: cidadeController,
                               decoration: InputDecoration(
                                 floatingLabelBehavior:
                                     FloatingLabelBehavior.always,
@@ -483,6 +552,7 @@ class CadastroPacientes extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(6.0),
                             child: TextFormField(
+                              controller: estadoController,
                               decoration: InputDecoration(
                                 floatingLabelBehavior:
                                     FloatingLabelBehavior.always,
@@ -509,6 +579,7 @@ class CadastroPacientes extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(6.0),
                       child: TextFormField(
+                        controller: telefoneCelularController,
                         decoration: InputDecoration(
                           floatingLabelBehavior: FloatingLabelBehavior.always,
                           labelText: ("Celular Pessoal"),
@@ -530,30 +601,10 @@ class CadastroPacientes extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(6.0),
                       child: TextFormField(
+                        controller: telefoneResidencialController,
                         decoration: InputDecoration(
                           floatingLabelBehavior: FloatingLabelBehavior.always,
                           labelText: ("Telefone Residencial"),
-                          labelStyle: TextStyle(color: Color(0xFF00A896)),
-                          fillColor: Colors.white,
-                          filled: true,
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                              borderRadius: BorderRadius.circular(10)),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color(0xFF00A896), width: 2.0),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          focusColor: Colors.white,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(6.0),
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          floatingLabelBehavior: FloatingLabelBehavior.always,
-                          labelText: ("Horário de Trabalho"),
                           labelStyle: TextStyle(color: Color(0xFF00A896)),
                           fillColor: Colors.white,
                           filled: true,
@@ -577,6 +628,28 @@ class CadastroPacientes extends StatelessWidget {
               padding: const EdgeInsets.only(bottom: 15, top: 5),
               child: ElevatedButton(
                 onPressed: () {
+                  Map<String, String> novoElemento = {
+                    'foto': fotoController.text,
+                    'email': emailController.text,
+                    'nomeCompleto': nomeCompletoController.text,
+                    'dataNascimento': dataNascimentoController.text,
+                    'idade': idadeController.text,
+                    'genero': generoController.text,
+                    'profissao': profissaoController.text,
+                    'estadoCivil': estadoCivilController.text,
+                    'etnia': etniaController.text,
+                    'religiao': religiaoController.text,
+                    'naturalidade': naturalidadeController.text,
+                    'endereco': enderecoController.text,
+                    'bairro': bairroController.text,
+                    'cidade': cidadeController.text,
+                    'telefoneResidencial': telefoneResidencialController.text,
+                    'telefoneCelular': telefoneCelularController.text,
+                    'escolaridade': escolaridadeController.text,
+                  };
+
+                  dados.add(novoElemento);
+
                   Navigator.pushReplacementNamed(context, "/pacientes");
                 },
                 style: ElevatedButton.styleFrom(
