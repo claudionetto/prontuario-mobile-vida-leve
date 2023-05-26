@@ -13,7 +13,8 @@ class Pacientes extends StatefulWidget {
 }
 
 class _PacientesState extends State<Pacientes> {
-  TextEditingController _searchController = TextEditingController(); // Novo controller
+  TextEditingController _searchController =
+      TextEditingController(); // Novo controller
 
   void initState() {
     super.initState();
@@ -26,7 +27,8 @@ class _PacientesState extends State<Pacientes> {
     super.dispose();
   }
 
-  List<dynamic> filteredPacientes = dados; // Lista filtrada inicialmente igual à lista completa
+  List<dynamic> filteredPacientes =
+      dados; // Lista filtrada inicialmente igual à lista completa
 
   void filterPacientes(String query) {
     setState(() {
@@ -53,14 +55,14 @@ class _PacientesState extends State<Pacientes> {
               children: [
                 const Padding(
                   padding: EdgeInsets.only(left: 16),
-                  child:               Text(
-                'Pacientes',
-                style: TextStyle(
-                  fontSize: 35.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Montserrat',
-                  color: Color(0xFF00A896),
-                ),
+                  child: Text(
+                    'Pacientes',
+                    style: TextStyle(
+                      fontSize: 35.0,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Montserrat',
+                      color: Color(0xFF00A896),
+                    ),
                   ),
                 ),
                 Padding(
@@ -86,8 +88,9 @@ class _PacientesState extends State<Pacientes> {
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: TextField(
-              controller: _searchController, // Atribua o controller ao TextField
-              onChanged: filterPacientes, 
+              controller:
+                  _searchController, // Atribua o controller ao TextField
+              onChanged: filterPacientes,
               decoration: InputDecoration(
                 hintText: 'Pesquisar...',
                 prefixIcon: const Icon(Icons.search),
@@ -104,7 +107,8 @@ class _PacientesState extends State<Pacientes> {
                 return GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(context, '/perfil_paciente');
-                    Globals.pacienteId = index;
+                    Globals.pacienteId =
+                        int.parse(filteredPacientes[index]['id']);
                   },
                   child: Container(
                     child: Padding(
@@ -120,8 +124,9 @@ class _PacientesState extends State<Pacientes> {
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: NetworkImage(
-                                    filteredPacientes[index]['foto'].toString()),
+                                image: NetworkImage(filteredPacientes[index]
+                                        ['foto']
+                                    .toString()),
                               ),
                             ),
                           ),
@@ -130,13 +135,17 @@ class _PacientesState extends State<Pacientes> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                filteredPacientes[index]['nomeCompleto'].toString(),
+                                filteredPacientes[index]['nomeCompleto']
+                                    .toString(),
                                 style: TextStyle(
                                     fontSize: 18, fontWeight: FontWeight.bold),
                               ),
                               SizedBox(height: 8),
                               Text(
-                                filteredPacientes[index]['idade'].toString() + ' Anos - ' + filteredPacientes[index]['dataNascimento'].toString(),
+                                filteredPacientes[index]['idade'].toString() +
+                                    ' Anos - ' +
+                                    filteredPacientes[index]['dataNascimento']
+                                        .toString(),
                                 style: TextStyle(fontSize: 16),
                               ),
                             ],

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vida_leve/utils/appbar.dart';
 import 'package:vida_leve/utils/drawer.dart';
+import 'package:vida_leve/utils/dados_agenda.dart';
+import 'package:intl/intl.dart';
 import 'package:vida_leve/pages/pacientes.dart';
 
 class HomePage extends StatelessWidget {
@@ -38,16 +40,36 @@ class HomePage extends StatelessWidget {
                 height: 400.0,
                 child: ListView.builder(
                   scrollDirection: Axis.vertical,
-                  itemCount: 10,
+                  itemCount: dados.length,
                   itemBuilder: (BuildContext context, int index) {
+                    String nome = dados[index]['nome'];
+                    String data = dados[index]['data'];
+                    String horario = dados[index]['horario'];
+                    String descricao = dados[index]['descricao'];
+
+                    DateTime dataEvento = DateFormat('dd/MM/yyyy').parse(data);
+
+                    DateTime dataAtual = DateTime.now();
+
+                    // Calcula a diferença em dias entre a data atual e a data do evento
+                    int diferencaDias = dataEvento.difference(dataAtual).inDays;
+
+                    Color cor;
+                    if (diferencaDias < 0) {
+                      cor = Color(0xFFE78F8F);
+                    } else if (diferencaDias == 0) {
+                      cor = Color(0xFF03C7B3);
+                    } else if (diferencaDias >= 1 && diferencaDias <= 3) {
+                      cor = Color(0xFF088EC4); // Próximos 2 dias
+                    } else {
+                      cor = Color(0xFF05668D); // Depois de 2 dias
+                    }
+
                     return Container(
-                      // diminui a largura do card
                       margin: const EdgeInsets.symmetric(
                           horizontal: 8.0, vertical: 5),
                       decoration: BoxDecoration(
-                        color: index % 2 == 0
-                            ? Color(0xFFE78F8F)
-                            : Color(0xFF088EC4),
+                        color: cor,
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                       child: Padding(
@@ -59,17 +81,17 @@ class HomePage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'Título do Card ${index + 1}',
+                                  nome,
                                   style: const TextStyle(
-                                    fontSize: 18.0,
+                                    fontSize: 16.0,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,
                                   ),
                                 ),
                                 Text(
-                                  '10/03  15:00',
+                                  '$data  $horario',
                                   style: const TextStyle(
-                                    fontSize: 18.0,
+                                    fontSize: 14.0,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,
                                   ),
@@ -78,7 +100,7 @@ class HomePage extends StatelessWidget {
                             ),
                             const SizedBox(height: 8.0),
                             Text(
-                              'Descrição do Card ${index + 1}',
+                              descricao,
                               style: const TextStyle(
                                 fontSize: 14.0,
                                 color: Colors.white,

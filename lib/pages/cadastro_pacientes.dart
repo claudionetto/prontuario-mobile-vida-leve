@@ -5,6 +5,8 @@ import 'package:vida_leve/utils/appbar.dart';
 import 'package:vida_leve/utils/dados.dart';
 import 'package:vida_leve/utils/drawer.dart';
 
+import '../utils/customtextfield_cadastro.dart';
+
 class CadastroPacientes extends StatefulWidget {
   const CadastroPacientes({super.key});
 
@@ -92,105 +94,28 @@ class _CadastroPacientesState extends State<CadastroPacientes> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(6.0),
-                      child: TextFormField(
-                        controller: nomeCompletoController,
-                        decoration: InputDecoration(
-                          floatingLabelBehavior: FloatingLabelBehavior.always,
-                          labelText: "Nome Completo",
-                          labelStyle: TextStyle(color: Color(0xFF00A896)),
-                          fillColor: Colors.white,
-                          filled: true,
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                              borderRadius: BorderRadius.circular(10)),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color(0xFF00A896), width: 2.0),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          focusColor: Colors.white,
-                        ),
-                      ),
+                    CustomTextFieldCadastro(
+                      labelText: "Nome Completo",
+                      controller: nomeCompletoController,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(6.0),
-                      child: TextFormField(
-                        controller: fotoController,
-                        decoration: InputDecoration(
-                          floatingLabelBehavior: FloatingLabelBehavior.always,
-                          labelText: "Foto (URL)",
-                          labelStyle: TextStyle(color: Color(0xFF00A896)),
-                          fillColor: Colors.white,
-                          filled: true,
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                              borderRadius: BorderRadius.circular(10)),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color(0xFF00A896), width: 2.0),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          focusColor: Colors.white,
-                        ),
-                      ),
+                    CustomTextFieldCadastro(
+                      labelText: "Foto (URL)",
+                      controller: fotoController,
                     ),
                     Row(
                       children: [
                         Expanded(
                           flex: 3,
-                          child: Padding(
-                              padding: const EdgeInsets.all(6.0),
-                              child: TextFormField(
-                                controller: dataNascimentoController,
-                                decoration: InputDecoration(
-                                  floatingLabelBehavior:
-                                      FloatingLabelBehavior.always,
-                                  labelText: "Data de Nascimento",
-                                  labelStyle:
-                                      TextStyle(color: Color(0xFF00A896)),
-                                  fillColor: Colors.white,
-                                  filled: true,
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Color(0xFF00A896)),
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: Color(0xFF00A896), width: 2.0),
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  focusColor: Colors.white,
-                                ),
-                              )),
+                          child: CustomTextFieldCadastro(
+                            labelText: "Data de nascimento",
+                            controller: dataNascimentoController,
+                          ),
                         ),
                         Expanded(
                           flex: 1,
-                          child: Padding(
-                            padding: const EdgeInsets.all(6.0),
-                            child: TextFormField(
-                              controller: idadeController,
-                              decoration: InputDecoration(
-                                floatingLabelBehavior:
-                                    FloatingLabelBehavior.always,
-                                labelText: "Idade",
-                                labelStyle: TextStyle(color: Color(0xFF00A896)),
-                                fillColor: Colors.white,
-                                filled: true,
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Color(0xFF00A896)),
-                                    borderRadius: BorderRadius.circular(10)),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Color(0xFF00A896), width: 2.0),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                focusColor: Colors.white,
-                              ),
-                            ),
+                          child: CustomTextFieldCadastro(
+                            labelText: "Idade",
+                            controller: idadeController,
                           ),
                         ),
                       ],
@@ -199,56 +124,16 @@ class _CadastroPacientesState extends State<CadastroPacientes> {
                       children: [
                         Expanded(
                           flex: 7,
-                          child: Padding(
-                            padding: const EdgeInsets.all(6.0),
-                            child: TextFormField(
-                              controller: naturalidadeController,
-                              decoration: InputDecoration(
-                                floatingLabelBehavior:
-                                    FloatingLabelBehavior.always,
-                                labelText: "Naturalidade",
-                                labelStyle: TextStyle(color: Color(0xFF00A896)),
-                                fillColor: Colors.white,
-                                filled: true,
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Color(0xFF00A896)),
-                                    borderRadius: BorderRadius.circular(10)),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Color(0xFF00A896), width: 2.0),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                focusColor: Colors.white,
-                              ),
-                            ),
+                          child: CustomTextFieldCadastro(
+                            labelText: "Naturalidade",
+                            controller: naturalidadeController,
                           ),
                         ),
                         Expanded(
                           flex: 4,
-                          child: Padding(
-                            padding: const EdgeInsets.all(6.0),
-                            child: TextFormField(
-                              controller: generoController,
-                              decoration: InputDecoration(
-                                floatingLabelBehavior:
-                                    FloatingLabelBehavior.always,
-                                labelText: "Genero",
-                                labelStyle: TextStyle(color: Color(0xFF00A896)),
-                                fillColor: Colors.white,
-                                filled: true,
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Color(0xFF00A896)),
-                                    borderRadius: BorderRadius.circular(10)),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Color(0xFF00A896), width: 2.0),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                focusColor: Colors.white,
-                              ),
-                            ),
+                          child: CustomTextFieldCadastro(
+                            labelText: "Genero",
+                            controller: generoController,
                           ),
                         ),
                       ],
@@ -257,83 +142,23 @@ class _CadastroPacientesState extends State<CadastroPacientes> {
                       children: [
                         Expanded(
                           flex: 2,
-                          child: Padding(
-                            padding: const EdgeInsets.all(6.0),
-                            child: TextFormField(
-                              controller: etniaController,
-                              decoration: InputDecoration(
-                                floatingLabelBehavior:
-                                    FloatingLabelBehavior.always,
-                                labelText: "Etnia",
-                                labelStyle: TextStyle(color: Color(0xFF00A896)),
-                                fillColor: Colors.white,
-                                filled: true,
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Color(0xFF00A896)),
-                                    borderRadius: BorderRadius.circular(10)),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Color(0xFF00A896), width: 2.0),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                focusColor: Colors.white,
-                              ),
-                            ),
+                          child: CustomTextFieldCadastro(
+                            labelText: "Etnia",
+                            controller: etniaController,
                           ),
                         ),
                         Expanded(
                           flex: 1,
-                          child: Padding(
-                            padding: const EdgeInsets.all(6.0),
-                            child: TextFormField(
-                              controller: alturaController,
-                              decoration: InputDecoration(
-                                floatingLabelBehavior:
-                                    FloatingLabelBehavior.always,
-                                labelText: "Altura",
-                                labelStyle: TextStyle(color: Color(0xFF00A896)),
-                                fillColor: Colors.white,
-                                filled: true,
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Color(0xFF00A896)),
-                                    borderRadius: BorderRadius.circular(10)),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Color(0xFF00A896), width: 2.0),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                focusColor: Colors.white,
-                              ),
-                            ),
+                          child: CustomTextFieldCadastro(
+                            labelText: "Altura",
+                            controller: alturaController,
                           ),
                         ),
                         Expanded(
                           flex: 1,
-                          child: Padding(
-                            padding: const EdgeInsets.all(6.0),
-                            child: TextFormField(
-                              controller: pesoController,
-                              decoration: InputDecoration(
-                                floatingLabelBehavior:
-                                    FloatingLabelBehavior.always,
-                                labelText: "Peso",
-                                labelStyle: TextStyle(color: Color(0xFF00A896)),
-                                fillColor: Colors.white,
-                                filled: true,
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Color(0xFF00A896)),
-                                    borderRadius: BorderRadius.circular(10)),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Color(0xFF00A896), width: 2.0),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                focusColor: Colors.white,
-                              ),
-                            ),
+                          child: CustomTextFieldCadastro(
+                            labelText: "Peso",
+                            controller: pesoController,
                           ),
                         ),
                       ],
@@ -342,81 +167,23 @@ class _CadastroPacientesState extends State<CadastroPacientes> {
                       children: [
                         Expanded(
                           flex: 1,
-                          child: Padding(
-                            padding: const EdgeInsets.all(6.0),
-                            child: TextFormField(
-                              controller: religiaoController,
-                              decoration: InputDecoration(
-                                floatingLabelBehavior:
-                                    FloatingLabelBehavior.always,
-                                labelText: "Religião",
-                                labelStyle: TextStyle(color: Color(0xFF00A896)),
-                                fillColor: Colors.white,
-                                filled: true,
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Color(0xFF00A896)),
-                                    borderRadius: BorderRadius.circular(10)),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Color(0xFF00A896), width: 2.0),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                focusColor: Colors.white,
-                              ),
-                            ),
+                          child: CustomTextFieldCadastro(
+                            labelText: "Religião",
+                            controller: religiaoController,
                           ),
                         ),
                         Expanded(
                           flex: 1,
-                          child: Padding(
-                            padding: const EdgeInsets.all(6.0),
-                            child: TextFormField(
-                              controller: estadoCivilController,
-                              decoration: InputDecoration(
-                                floatingLabelBehavior:
-                                    FloatingLabelBehavior.always,
-                                labelText: "Estado Civil",
-                                labelStyle: TextStyle(color: Color(0xFF00A896)),
-                                fillColor: Colors.white,
-                                filled: true,
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Color(0xFF00A896)),
-                                    borderRadius: BorderRadius.circular(10)),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Color(0xFF00A896), width: 2.0),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                focusColor: Colors.white,
-                              ),
-                            ),
+                          child: CustomTextFieldCadastro(
+                            labelText: "Estado Civil",
+                            controller: estadoCivilController,
                           ),
                         ),
                       ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(6.0),
-                      child: TextFormField(
-                        controller: profissaoController,
-                        decoration: InputDecoration(
-                          floatingLabelBehavior: FloatingLabelBehavior.always,
-                          labelText: "Profissão / Horário de Trabalho",
-                          labelStyle: TextStyle(color: Color(0xFF00A896)),
-                          fillColor: Colors.white,
-                          filled: true,
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                              borderRadius: BorderRadius.circular(10)),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color(0xFF00A896), width: 2.0),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          focusColor: Colors.white,
-                        ),
-                      ),
+                    CustomTextFieldCadastro(
+                      labelText: "Profissão / Horário de Trabalho",
+                      controller: profissaoController,
                     ),
                     Padding(
                       padding: const EdgeInsets.all(16.0),
@@ -430,195 +197,47 @@ class _CadastroPacientesState extends State<CadastroPacientes> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(6.0),
-                      child: TextFormField(
-                        controller: emailController,
-                        decoration: InputDecoration(
-                          floatingLabelBehavior: FloatingLabelBehavior.always,
-                          labelText: "Email",
-                          labelStyle: TextStyle(color: Color(0xFF00A896)),
-                          fillColor: Colors.white,
-                          filled: true,
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                              borderRadius: BorderRadius.circular(10)),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color(0xFF00A896), width: 2.0),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          focusColor: Colors.white,
-                        ),
-                      ),
+                    CustomTextFieldCadastro(
+                      labelText: "Email",
+                      controller: emailController,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(6.0),
-                      child: TextFormField(
-                        controller: enderecoController,
-                        decoration: InputDecoration(
-                          floatingLabelBehavior: FloatingLabelBehavior.always,
-                          labelText: "Endereço residencial",
-                          labelStyle: TextStyle(color: Color(0xFF00A896)),
-                          fillColor: Colors.white,
-                          filled: true,
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                              borderRadius: BorderRadius.circular(10)),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color(0xFF00A896), width: 2.0),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          focusColor: Colors.white,
-                        ),
-                      ),
+                    CustomTextFieldCadastro(
+                      labelText: "Endereço Residencial",
+                      controller: enderecoController,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(6.0),
-                      child: TextFormField(
-                        controller: complementoController,
-                        decoration: InputDecoration(
-                          floatingLabelBehavior: FloatingLabelBehavior.always,
-                          labelText: "Complemento",
-                          labelStyle: TextStyle(color: Color(0xFF00A896)),
-                          fillColor: Colors.white,
-                          filled: true,
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                              borderRadius: BorderRadius.circular(10)),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color(0xFF00A896), width: 2.0),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          focusColor: Colors.white,
-                        ),
-                      ),
+                    CustomTextFieldCadastro(
+                      labelText: "Complemento",
+                      controller: complementoController,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(6.0),
-                      child: TextFormField(
-                        controller: bairroController,
-                        decoration: InputDecoration(
-                          floatingLabelBehavior: FloatingLabelBehavior.always,
-                          labelText: ("Bairro"),
-                          labelStyle: TextStyle(color: Color(0xFF00A896)),
-                          fillColor: Colors.white,
-                          filled: true,
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                              borderRadius: BorderRadius.circular(10)),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color(0xFF00A896), width: 2.0),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          focusColor: Colors.white,
-                        ),
-                      ),
+                    CustomTextFieldCadastro(
+                      labelText: "Bairro",
+                      controller: bairroController,
                     ),
                     Row(
                       children: [
                         Expanded(
                           flex: 5,
-                          child: Padding(
-                            padding: const EdgeInsets.all(6.0),
-                            child: TextFormField(
-                              controller: cidadeController,
-                              decoration: InputDecoration(
-                                floatingLabelBehavior:
-                                    FloatingLabelBehavior.always,
-                                labelText: "Cidade",
-                                labelStyle: TextStyle(color: Color(0xFF00A896)),
-                                fillColor: Colors.white,
-                                filled: true,
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Color(0xFF00A896)),
-                                    borderRadius: BorderRadius.circular(10)),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Color(0xFF00A896), width: 2.0),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                focusColor: Colors.white,
-                              ),
-                            ),
+                          child: CustomTextFieldCadastro(
+                            labelText: "Cidade",
+                            controller: cidadeController,
                           ),
                         ),
                         Expanded(
                           flex: 2,
-                          child: Padding(
-                            padding: const EdgeInsets.all(6.0),
-                            child: TextFormField(
-                              controller: estadoController,
-                              decoration: InputDecoration(
-                                floatingLabelBehavior:
-                                    FloatingLabelBehavior.always,
-                                labelText: "Estado",
-                                labelStyle: TextStyle(color: Color(0xFF00A896)),
-                                fillColor: Colors.white,
-                                filled: true,
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Color(0xFF00A896)),
-                                    borderRadius: BorderRadius.circular(10)),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Color(0xFF00A896), width: 2.0),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                focusColor: Colors.white,
-                              ),
-                            ),
+                          child: CustomTextFieldCadastro(
+                            labelText: "Estado",
+                            controller: estadoController,
                           ),
                         ),
                       ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(6.0),
-                      child: TextFormField(
-                        controller: telefoneCelularController,
-                        decoration: InputDecoration(
-                          floatingLabelBehavior: FloatingLabelBehavior.always,
-                          labelText: ("Celular Pessoal"),
-                          labelStyle: TextStyle(color: Color(0xFF00A896)),
-                          fillColor: Colors.white,
-                          filled: true,
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                              borderRadius: BorderRadius.circular(10)),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color(0xFF00A896), width: 2.0),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          focusColor: Colors.white,
-                        ),
-                      ),
+                    CustomTextFieldCadastro(
+                      labelText: "Celular Pessoal",
+                      controller: telefoneCelularController,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(6.0),
-                      child: TextFormField(
-                        controller: telefoneResidencialController,
-                        decoration: InputDecoration(
-                          floatingLabelBehavior: FloatingLabelBehavior.always,
-                          labelText: ("Telefone Residencial"),
-                          labelStyle: TextStyle(color: Color(0xFF00A896)),
-                          fillColor: Colors.white,
-                          filled: true,
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF00A896)),
-                              borderRadius: BorderRadius.circular(10)),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color(0xFF00A896), width: 2.0),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          focusColor: Colors.white,
-                        ),
-                      ),
+                    CustomTextFieldCadastro(
+                      labelText: "Telefone Residencial",
+                      controller: telefoneResidencialController,
                     ),
                   ]),
                 ),
@@ -629,6 +248,7 @@ class _CadastroPacientesState extends State<CadastroPacientes> {
               child: ElevatedButton(
                 onPressed: () {
                   Map<String, String> novoElemento = {
+                    'id': dados.length.toString(),
                     'foto': fotoController.text,
                     'email': emailController.text,
                     'nomeCompleto': nomeCompletoController.text,
@@ -639,7 +259,7 @@ class _CadastroPacientesState extends State<CadastroPacientes> {
                     'estadoCivil': estadoCivilController.text,
                     'etnia': etniaController.text,
                     'religiao': religiaoController.text,
-                                        'altura': alturaController.text,
+                    'altura': alturaController.text,
                     'peso': pesoController.text,
                     'naturalidade': naturalidadeController.text,
                     'endereco': enderecoController.text,
