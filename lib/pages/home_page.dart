@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       endDrawer: MyDrawer(),
-      appBar: MyAppBar(),
+      appBar: MyAppBar(showBackButton: false),
       body: Padding(
         padding: const EdgeInsets.all(18.0),
         child: Column(children: [

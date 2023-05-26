@@ -43,6 +43,55 @@ class _PerfilPacienteState extends State<PerfilPaciente> {
     return data[key] != null ? data[key].toString() : '';
   }
 
+  void _toggleEditing() {
+    if (Globals.isEditing) {
+      dados[pacienteId]['email'] = emailController.text;
+      dados[pacienteId]['dataNascimento'] = dataNascimentoController.text;
+      dados[pacienteId]['idade'] = idadeController.text;
+      dados[pacienteId]['genero'] = generoController.text;
+      dados[pacienteId]['profissao'] = profissaoController.text;
+      dados[pacienteId]['estadoCivil'] = estadoCivilController.text;
+      dados[pacienteId]['etnia'] = etniaController.text;
+      dados[pacienteId]['religiao'] = religiaoController.text;
+      dados[pacienteId]['naturalidade'] = naturalidadeController.text;
+      dados[pacienteId]['endereco'] = enderecoController.text;
+      dados[pacienteId]['bairro'] = bairroController.text;
+      dados[pacienteId]['cidade'] = cidadeController.text;
+            dados[pacienteId]['altura'] = alturaController.text;
+      dados[pacienteId]['peso'] = pesoController.text;
+      dados[pacienteId]['telefoneResidencial'] =
+          telefoneResidencialController.text;
+      dados[pacienteId]['telefoneCelular'] = telefoneCelularController.text;
+      
+
+      setState(() {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            backgroundColor: Colors.green,
+            content: Text(
+              'Atualizações feitas',
+              textAlign: TextAlign.center,
+            ),
+            duration: Duration(seconds: 3),
+            action: SnackBarAction(
+              label: 'X',
+              textColor: Colors.white,
+              onPressed: () {
+                ScaffoldMessenger.of(context).hideCurrentSnackBar();
+              },
+            ),
+          ),
+        );
+
+        Globals.isEditing = false;
+      });
+    } else {
+      setState(() {
+        Globals.isEditing = true;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -193,53 +242,43 @@ class _PerfilPacienteState extends State<PerfilPaciente> {
                   ),
                 ),
                 CustomTextField(
-                  labelText: "Endereço",
-                  controller: enderecoController,
-                  initialValue: getInitialValue(dados[pacienteId], 'endereco'),
+                  labelText: "Email",
+                  controller: emailController,
+                  initialValue: getInitialValue(dados[pacienteId], 'email'),
                 ),
                 CustomTextField(
-                  labelText: "Complemento",
-                  controller: complementoController,
+                  labelText: "Telefone Celular",
+                  controller: telefoneCelularController,
                   initialValue:
-                      getInitialValue(dados[pacienteId], 'complemento'),
+                      getInitialValue(dados[pacienteId], 'telefoneCelular'),
                 ),
-                CustomTextField(
-                  labelText: "Bairro",
-                  controller: bairroController,
-                  initialValue: getInitialValue(dados[pacienteId], 'bairro'),
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      flex: 5,
-                      child: CustomTextField(
-                        labelText: "Cidade",
-                        controller: cidadeController,
-                        initialValue:
-                            getInitialValue(dados[pacienteId], 'cidade'),
+                
+                const SizedBox(height: 30),
+                SizedBox(
+                  width: double.infinity,
+                  height: 40,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, "/anamnese");
+                    },
+                    style: ElevatedButton.styleFrom(
+                      textStyle: const TextStyle(fontSize: 20.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
                     ),
-                    Expanded(
-                      flex: 2,
-                      child: CustomTextField(
-                        labelText: "Estado",
-                        controller: estadoController,
-                        initialValue:
-                            getInitialValue(dados[pacienteId], 'estado'),
-                      ),
+                    child: const Text(
+                      'Anamneses',
                     ),
-                  ],
+                  ),
                 ),
-                SizedBox(height: 50),
               ]),
             ),
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.pushNamed(context, "/anamnese");
-          },
-          child: Icon(Icons.add),
-        ));
+      floatingActionButton: FloatingActionButton(
+        onPressed: _toggleEditing,
+        child: Globals.isEditing ? Icon(Icons.save) : Icon(Icons.edit),
+      ),);
   }
 }

@@ -56,7 +56,7 @@ class _AnamnesePageState extends State<AnamnesePage> {
                           decoration: BoxDecoration(
                             color: Color(0xFF00A896).withOpacity(0.4),
                             borderRadius: BorderRadius.circular(
-                                20), // Define o raio para as bordas
+                                10), // Define o raio para as bordas
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -77,25 +77,30 @@ class _AnamnesePageState extends State<AnamnesePage> {
                     ),
                     SizedBox(width: 15),
                     Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Color(0xFF0C8E09).withOpacity(0.4),
-                          borderRadius: BorderRadius.circular(
-                              20), // Define o raio para as bordas
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.menu_book,
-                              size: 70,
-                            ),
-                            Text("Nutrição",
-                                style: TextStyle(
-                                  fontSize: 25.0,
-                                  fontWeight: FontWeight.w600,
-                                )),
-                          ],
+                      child: GestureDetector(
+                                                onTap: () {
+                          Navigator.pushNamed(context, "/anamnese_nutricao");
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Color(0xFF0C8E09).withOpacity(0.4),
+                            borderRadius: BorderRadius.circular(
+                                10), // Define o raio para as bordas
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.menu_book,
+                                size: 70,
+                              ),
+                              Text("Nutrição",
+                                  style: TextStyle(
+                                    fontSize: 25.0,
+                                    fontWeight: FontWeight.w600,
+                                  )),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -108,49 +113,59 @@ class _AnamnesePageState extends State<AnamnesePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Color(0xFF2764FF).withOpacity(0.4),
-                          borderRadius: BorderRadius.circular(
-                              20), // Define o raio para as bordas
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.psychology,
-                              size: 70,
-                            ),
-                            Text("Psicologia",
-                                style: TextStyle(
-                                  fontSize: 25.0,
-                                  fontWeight: FontWeight.w600,
-                                )),
-                          ],
+                      child: GestureDetector(
+                                                onTap: () {
+                          Navigator.pushNamed(context, "/anamnese_psicologia");
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Color(0xFF2764FF).withOpacity(0.4),
+                            borderRadius: BorderRadius.circular(
+                                10), // Define o raio para as bordas
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.psychology,
+                                size: 70,
+                              ),
+                              Text("Psicologia",
+                                  style: TextStyle(
+                                    fontSize: 25.0,
+                                    fontWeight: FontWeight.w600,
+                                  )),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                     SizedBox(width: 15),
                     Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Color(0xFFFAFF00).withOpacity(0.4),
-                          borderRadius: BorderRadius.circular(
-                              20), // Define o raio para as bordas
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.medication,
-                              size: 70,
-                            ),
-                            Text("Farmácia",
-                                style: TextStyle(
-                                  fontSize: 25.0,
-                                  fontWeight: FontWeight.w600,
-                                )),
-                          ],
+                      child: GestureDetector(
+                                                onTap: () {
+                          Navigator.pushNamed(context, "/anamnese_farmacia");
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Color(0xFFFAFF00).withOpacity(0.4),
+                            borderRadius: BorderRadius.circular(
+                                10), // Define o raio para as bordas
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.medication,
+                                size: 70,
+                              ),
+                              Text("Farmácia",
+                                  style: TextStyle(
+                                    fontSize: 25.0,
+                                    fontWeight: FontWeight.w600,
+                                  )),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -163,25 +178,30 @@ class _AnamnesePageState extends State<AnamnesePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Color(0xFF00FF19).withOpacity(0.4),
-                          borderRadius: BorderRadius.circular(
-                              20), // Define o raio para as bordas
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.pool,
-                              size: 70,
-                            ),
-                            Text("Educação Física",
-                                style: TextStyle(
-                                  fontSize: 25.0,
-                                  fontWeight: FontWeight.w600,
-                                )),
-                          ],
+                      child: GestureDetector(
+                                                onTap: () {
+                          Navigator.pushNamed(context, "/anamnese_educacao_fisica");
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Color(0xFF00FF19).withOpacity(0.4),
+                            borderRadius: BorderRadius.circular(
+                                10), // Define o raio para as bordas
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.pool,
+                                size: 70,
+                              ),
+                              Text("Educação Física",
+                                  style: TextStyle(
+                                    fontSize: 25.0,
+                                    fontWeight: FontWeight.w600,
+                                  )),
+                            ],
+                          ),
                         ),
                       ),
                     ),

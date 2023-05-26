@@ -22,23 +22,26 @@ class MyDrawer extends StatelessWidget {
             accountEmail: const Text("teste@teste.com"),
           ),
           ListTile(
-            leading: const Icon(Icons.ad_units_rounded),
+            leading: const Icon(Icons.home),
             title: const Text("Tela Inicial"),
             onTap: () {
+
               Navigator.pushReplacementNamed(context, "/home");
             },
           ),
           ListTile(
-            leading: const Icon(Icons.ad_units_rounded),
+            leading: const Icon(Icons.personal_injury),
             title: const Text("Pacientes"),
             onTap: () {
+
               Navigator.pushReplacementNamed(context, "/pacientes");
             },
           ),
           ListTile(
-            leading: const Icon(Icons.ad_units_rounded),
+            leading: const Icon(Icons.calendar_month),
             title: const Text("Agenda"),
             onTap: () {
+
               Navigator.pushReplacementNamed(context, "/calendario");
             },
           ),
@@ -47,6 +50,7 @@ class MyDrawer extends StatelessWidget {
             leading: const Icon(Icons.logout),
             title: const Text("Logout"),
             onTap: () {
+
               Navigator.pushReplacementNamed(context, "/login");
             },
           ),

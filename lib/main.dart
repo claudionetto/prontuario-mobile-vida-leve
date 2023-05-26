@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:vida_leve/pages/anamnese.dart';
+import 'package:vida_leve/pages/anamnese_educacao_fisica.dart';
+import 'package:vida_leve/pages/anamnese_farmacia.dart';
 import 'package:vida_leve/pages/anamnese_geral.dart';
+import 'package:vida_leve/pages/anamnese_nutricao.dart';
+import 'package:vida_leve/pages/anamnese_psicologia.dart';
 import 'package:vida_leve/pages/cadastro_pacientes.dart';
 import 'package:vida_leve/pages/calendar_page.dart';
 import 'package:vida_leve/pages/login_page.dart';
@@ -37,6 +41,10 @@ class MyApp extends StatelessWidget {
         "/anamnese": (context) => AnamnesePage(),
         "/perfil_paciente": (context) => PerfilPaciente(),
         "/anamnese_geral": (context) => AnamneseGeralPage(),
+        "/anamnese_nutricao": (context) => AnamneseNutricaoPage(),
+        "/anamnese_psicologia": (context) => AnamnesePsicologiaPage(),
+        "/anamnese_farmacia": (context) => AnamneseFarmaciaPage(),
+        "/anamnese_educacao_fisica": (context) => AnamneseEducacaoFisicaPage(),
       },
     );
   }

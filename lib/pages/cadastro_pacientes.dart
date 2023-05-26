@@ -639,6 +639,8 @@ class _CadastroPacientesState extends State<CadastroPacientes> {
                     'estadoCivil': estadoCivilController.text,
                     'etnia': etniaController.text,
                     'religiao': religiaoController.text,
+                                        'altura': alturaController.text,
+                    'peso': pesoController.text,
                     'naturalidade': naturalidadeController.text,
                     'endereco': enderecoController.text,
                     'complemento': complementoController.text,
