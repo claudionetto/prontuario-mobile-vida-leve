@@ -8,6 +8,7 @@ import 'package:vida_leve/pages/anamnese_psicologia.dart';
 import 'package:vida_leve/pages/cadastro_pacientes.dart';
 import 'package:vida_leve/pages/calendar_page.dart';
 import 'package:vida_leve/pages/login_page.dart';
+import 'package:vida_leve/pages/cadastro_consulta.dart';
 import 'package:vida_leve/pages/pacientes.dart';
 import 'package:vida_leve/pages/perfil_paciente_page.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         "/anamnese_psicologia": (context) => AnamnesePsicologiaPage(),
         "/anamnese_farmacia": (context) => AnamneseFarmaciaPage(),
         "/anamnese_educacao_fisica": (context) => AnamneseEducacaoFisicaPage(),
+        "/cadastro_consulta": (context) => CadastroConsulta(),
       },
     );
   }

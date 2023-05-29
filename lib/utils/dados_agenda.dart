@@ -1,4 +1,4 @@
-List<Map<String, dynamic>> dados = [
+List<Map<String, String>> dadosAgenda = [
   {
     'nome': 'Vera Almeida',
     'data': '24/05/2023',

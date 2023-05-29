@@ -1,7 +1,9 @@
 import 'dart:collection';
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:vida_leve/utils/global.dart';
 
 import '../models/event_model.dart';
 import '../utils/appbar.dart';
@@ -85,6 +87,9 @@ class _CalendarPageState extends State<CalendarPage> {
             onDaySelected: (newSelectedDay, newFocusedDay) {
               setState(() {
                 selectedDay = newSelectedDay;
+                String formattedDate =
+                    DateFormat('dd/MM/yyyy').format(selectedDay);
+                Globals.diaSelecionado = formattedDate;
                 focusedDay = newFocusedDay;
                 currentMonth =
                     DateTime(newSelectedDay.year, newSelectedDay.month);
@@ -239,7 +244,7 @@ class _CalendarPageState extends State<CalendarPage> {
             padding: const EdgeInsets.all(12.0),
             child: ElevatedButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, "/pacientes");
+                Navigator.pushReplacementNamed(context, "/cadastro_consulta");
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(

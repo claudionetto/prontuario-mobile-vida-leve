@@ -26,6 +26,7 @@ class _CustomTextFieldCadastroState extends State<CustomTextFieldCadastro> {
     return Padding(
       padding: const EdgeInsets.all(6.0),
       child: TextFormField(
+        maxLines: null,
         controller: widget.controller, // Usando o controller fornecido
         decoration: InputDecoration(
           floatingLabelBehavior: FloatingLabelBehavior.always,

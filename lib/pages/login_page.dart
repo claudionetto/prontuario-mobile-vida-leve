@@ -99,8 +99,6 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () {
                     if (email == 'teste@teste.com' && senha == 'teste123') {
                       Navigator.pushReplacementNamed(context, "/home");
-                    } else {
-                      print('Login invalido');
                     }
                   },
                   child: const Text('Login'),

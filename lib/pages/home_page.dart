@@ -10,9 +10,14 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    dadosAgenda.sort((a, b) {
+      final dataA = DateFormat('dd/MM/yyyy').parse(a['data']!);
+      final dataB = DateFormat('dd/MM/yyyy').parse(b['data']!);
+      return dataA.compareTo(dataB);
+    });
     return Scaffold(
       endDrawer: MyDrawer(),
-      appBar: MyAppBar(showBackButton: false),
+      appBar: MyAppBar(),
       body: Padding(
         padding: const EdgeInsets.all(18.0),
         child: Column(children: [
@@ -40,12 +45,13 @@ class HomePage extends StatelessWidget {
                 height: 400.0,
                 child: ListView.builder(
                   scrollDirection: Axis.vertical,
-                  itemCount: dados.length,
+                  itemCount: dadosAgenda.length,
                   itemBuilder: (BuildContext context, int index) {
-                    String nome = dados[index]['nome'];
-                    String data = dados[index]['data'];
-                    String horario = dados[index]['horario'];
-                    String descricao = dados[index]['descricao'];
+                    String nome = dadosAgenda[index]['nome'].toString();
+                    String data = dadosAgenda[index]['data'].toString();
+                    String horario = dadosAgenda[index]['horario'].toString();
+                    String descricao =
+                        dadosAgenda[index]['descricao'].toString();
 
                     DateTime dataEvento = DateFormat('dd/MM/yyyy').parse(data);
 
@@ -126,7 +132,7 @@ class HomePage extends StatelessWidget {
                   height: 40,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, "/calendario");
+                      Navigator.pushNamed(context, "/calendario");
                     },
                     style: ElevatedButton.styleFrom(
                       textStyle: const TextStyle(fontSize: 20.0),

@@ -30,6 +30,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return Padding(
       padding: const EdgeInsets.all(6.0),
       child: TextFormField(
+        maxLines: null,
         enabled: Globals.isEditing,
         controller: widget.controller, // Usando o controller fornecido
         decoration: InputDecoration(
