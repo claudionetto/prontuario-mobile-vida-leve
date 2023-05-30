@@ -188,6 +188,7 @@ class _AnamneseGeralPageState extends State<AnamneseGeralPage> {
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.w900,
+                    fontFamily: "Poppins",
                   ),
                 ),
                 SizedBox(height: 15),

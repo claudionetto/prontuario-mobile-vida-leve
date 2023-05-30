@@ -12,7 +12,7 @@ class MyDrawer extends StatelessWidget {
             currentAccountPicture: ClipRRect(
               borderRadius: BorderRadius.circular(100),
               child: Image.network(
-                'https://media.istockphoto.com/id/1372002650/pt/foto/cropped-portrait-of-an-attractive-young-female-doctor-standing-with-her-arms-folded-in-the.jpg?s=2048x2048&w=is&k=20&c=pu5HClqVZo3LqlDMESL7lfCzqTjWZD_98u5J85Qlszk=',
+                'https://media.istockphoto.com/id/1434687410/pt/foto/portrait-of-happy-and-successful-african-american-doctor-man-working-inside-office-clinic.jpg?s=2048x2048&w=is&k=20&c=xIcqkYKVJ3AuL_ogX4VhLhvH4PBJO_Fg_qHeWeW-AHY=',
               ),
             ),
             accountName: const Text(
@@ -20,6 +20,7 @@ class MyDrawer extends StatelessWidget {
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
+                
               ),
             ),
             accountEmail: const Text(
@@ -31,7 +32,11 @@ class MyDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.home, color: Color(0xFF00A896)),
-            title: const Text("Tela Inicial"),
+            title: const Text("Tela Inicial",
+                      style: TextStyle(
+                          fontSize: 16.0,
+
+                          fontFamily: "Poppins"),),
             onTap: () {
               Navigator.pushReplacementNamed(context, "/home");
             },
@@ -39,7 +44,11 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             leading:
                 const Icon(Icons.personal_injury, color: Color(0xFF00A896)),
-            title: const Text("Pacientes"),
+            title: const Text("Pacientes",
+                      style: TextStyle(
+                          fontSize: 16.0,
+
+                          fontFamily: "Poppins"),),
             onTap: () {
               Navigator.pushReplacementNamed(context, "/pacientes");
             },
@@ -49,7 +58,11 @@ class MyDrawer extends StatelessWidget {
               Icons.calendar_month,
               color: Color(0xFF00A896),
             ),
-            title: const Text("Agenda"),
+            title: const Text("Agenda",
+                      style: TextStyle(
+                          fontSize: 16.0,
+
+                          fontFamily: "Poppins"),),
             onTap: () {
               Navigator.pushReplacementNamed(context, "/calendario");
             },
@@ -57,7 +70,11 @@ class MyDrawer extends StatelessWidget {
           Expanded(child: SizedBox()),
           ListTile(
             leading: const Icon(Icons.logout, color: Color(0xFF00A896)),
-            title: const Text("Logout"),
+            title: const Text("Logout",
+                      style: TextStyle(
+                          fontSize: 16.0,
+
+                          fontFamily: "Poppins"),),
             onTap: () {
               Navigator.pushReplacementNamed(context, "/login");
             },

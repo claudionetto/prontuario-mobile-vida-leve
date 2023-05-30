@@ -112,6 +112,7 @@ class _PerfilPacienteState extends State<PerfilPaciente> {
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.w900,
+                    fontFamily: 'Poppins',
                   ),
                 ),
                 SizedBox(height: 15),
@@ -268,7 +269,12 @@ class _PerfilPacienteState extends State<PerfilPaciente> {
                       ),
                     ),
                     child: const Text(
-                      'Anamneses',
+                      'Anamneses', style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.bold,
+                        
+                      ),
                     ),
                   ),
                 ),

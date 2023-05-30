@@ -30,6 +30,7 @@ class _PacientesState extends State<Pacientes> {
   List<dynamic> filteredPacientes =
       dados; // Lista filtrada inicialmente igual à lista completa
 
+  
   void filterPacientes(String query) {
     setState(() {
       filteredPacientes = dados.where((paciente) {
@@ -43,9 +44,10 @@ class _PacientesState extends State<Pacientes> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       endDrawer: MyDrawer(),
-      appBar: MyAppBar(showBackButton: false),
+      appBar: MyAppBar(),
       body: Column(
         children: [
           Padding(
@@ -60,7 +62,7 @@ class _PacientesState extends State<Pacientes> {
                     style: TextStyle(
                       fontSize: 35.0,
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'Montserrat',
+                      fontFamily: 'Poppins',
                       color: Color(0xFF00A896),
                     ),
                   ),

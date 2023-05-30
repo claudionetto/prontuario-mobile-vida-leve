@@ -55,9 +55,9 @@ class _CadastroPacientesState extends State<CadastroPacientes> {
                 const Text(
                   'Cadastro de Pacientes',
                   style: TextStyle(
-                    fontSize: 30.0,
+                    fontSize: 28.0,
                     fontWeight: FontWeight.bold,
-                    fontFamily: 'Montserrat',
+                    fontFamily: "Poppins",
                     color: Color(0xFF00A896),
                   ),
                 ),
@@ -285,7 +285,12 @@ class _CadastroPacientesState extends State<CadastroPacientes> {
                   ),
                 ),
                 child: const Text(
-                  'Cadastrar Paciente',
+                  'Cadastrar Paciente', style: TextStyle(
+                    fontFamily: "Poppins",
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                  
                 ),
               ),
             ),

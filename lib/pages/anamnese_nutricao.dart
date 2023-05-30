@@ -161,6 +161,7 @@ class _AnamneseNutricaoPageState extends State<AnamneseNutricaoPage> {
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.w900,
+                    fontFamily: "Poppins",
                   ),
                 ),
                 SizedBox(height: 15),

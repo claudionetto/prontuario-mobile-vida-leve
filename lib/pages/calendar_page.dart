@@ -114,12 +114,12 @@ class _CalendarPageState extends State<CalendarPage> {
             headerStyle: HeaderStyle(
               leftChevronIcon: const Icon(
                 Icons.chevron_left,
-                size: 32,
+                size: 24,
                 color: Color(0xFF00A896),
               ),
               rightChevronIcon: const Icon(
                 Icons.chevron_right,
-                size: 32,
+                size: 24,
                 color: Color(0xFF00A896),
               ),
               headerPadding: EdgeInsets.all(20),
@@ -132,9 +132,9 @@ class _CalendarPageState extends State<CalendarPage> {
               formatButtonTextStyle:
                   const TextStyle(color: Colors.white, fontSize: 12),
               titleTextStyle: const TextStyle(
-                fontSize: 22.0,
+                fontSize: 16.0,
                 fontWeight: FontWeight.w900,
-                fontFamily: 'Montserrat',
+                fontFamily: 'Poppins',
                 color: Color(0xFF00A896),
               ),
               titleCentered: true,
@@ -244,7 +244,7 @@ class _CalendarPageState extends State<CalendarPage> {
             padding: const EdgeInsets.all(12.0),
             child: ElevatedButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, "/cadastro_consulta");
+                Navigator.pushNamed(context, "/cadastro_consulta");
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(
@@ -256,6 +256,11 @@ class _CalendarPageState extends State<CalendarPage> {
               ),
               child: const Text(
                 'Nova consulta',
+                      style: TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Poppins"),
+                
               ),
             ),
           ),

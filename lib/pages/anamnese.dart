@@ -33,7 +33,7 @@ class _AnamnesePageState extends State<AnamnesePage> {
                 style: TextStyle(
                   fontSize: 35.0,
                   fontWeight: FontWeight.bold,
-                  fontFamily: 'Montserrat',
+                  fontFamily: 'Poppins',
                   color: Color(0xFF00A896),
                 ),
               ),

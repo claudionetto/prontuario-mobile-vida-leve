@@ -188,6 +188,7 @@ class _AnamneseEducacaoFisicaPageState extends State<AnamneseEducacaoFisicaPage>
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.w900,
+                    fontFamily: "Poppins",
                   ),
                 ),
                 SizedBox(height: 15),

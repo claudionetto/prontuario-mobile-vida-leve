@@ -25,14 +25,22 @@ class _CadastroConsultaPage extends State<CadastroConsulta> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: MyDrawer(),
       appBar: MyAppBar(),
-      drawer: MyDrawer(),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.all(22.0),
+          padding: EdgeInsets.all(20.0),
           child: Column(
             children: [
-              SizedBox(height: 10.0),
+                            Text(
+                Globals.diaSelecionado
+                      ,style: TextStyle(
+                          fontSize: 24.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Poppins",
+                          ),
+              ),
+              SizedBox(height: 20.0),
               CircleAvatar(
                 backgroundImage:
                     NetworkImage(dados[selectedPacienteId]['foto'].toString()),
@@ -40,8 +48,11 @@ class _CadastroConsultaPage extends State<CadastroConsulta> {
               ),
               SizedBox(height: 25.0),
               Text(
-                'Selecione um paciente:',
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                'Selecione um paciente:', style: TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Poppins",
+                          ),
               ),
               SizedBox(height: 5),
               DropdownButtonFormField<int>(
@@ -67,8 +78,10 @@ class _CadastroConsultaPage extends State<CadastroConsulta> {
               ),
               SizedBox(height: 20),
               Text(
-                'Horário da consulta no dia: ' + Globals.diaSelecionado,
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                'Horário da consulta: ',style: TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Poppins",)
               ),
               SizedBox(height: 5),
               TextField(
@@ -87,12 +100,13 @@ class _CadastroConsultaPage extends State<CadastroConsulta> {
               ),
               SizedBox(height: 20),
               Text(
-                'Descrição da consulta:',
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                'Descrição da consulta:',style: TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Poppins",)
               ),
               SizedBox(height: 5),
               TextField(
-                maxLines: null,
                 onChanged: (value) {
                   setState(() {
                     descricaoConsulta = value;
@@ -132,6 +146,10 @@ class _CadastroConsultaPage extends State<CadastroConsulta> {
                   ),
                   child: const Text(
                     'Cadastrar Consulta',
+                      style: TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Poppins"),
                   ),
                 ),
               ),

@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
                   fontSize: 30.0,
                   fontWeight: FontWeight.bold,
                   color: Color(0xFF00A896),
-                  fontFamily: 'Montserrat',
+                  fontFamily: 'Poppins',
                 ),
               ),
             ],
@@ -142,6 +142,10 @@ class HomePage extends StatelessWidget {
                     ),
                     child: const Text(
                       'Agenda Completa',
+                      style: TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Poppins"),
                     ),
                   ),
                 ),
@@ -160,7 +164,11 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     child: const Text(
-                      'Pacientes',
+                      'Pacientes' ,
+                      style: TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Poppins"),
                     ),
                   ),
                 ),

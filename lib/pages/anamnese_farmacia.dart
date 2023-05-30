@@ -188,6 +188,7 @@ class _AnamneseFarmaciaPageState extends State<AnamneseFarmaciaPage> {
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.w900,
+                    fontFamily: "Poppins",
                   ),
                 ),
                 SizedBox(height: 15),
