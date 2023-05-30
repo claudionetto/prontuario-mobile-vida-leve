@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 import 'package:vida_leve/utils/model_data.dart';
 import 'package:http/http.dart' as http;
 

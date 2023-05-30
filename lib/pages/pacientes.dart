@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vida_leve/pages/anamnese_geral.dart';
-import 'package:vida_leve/pages/perfil_paciente_page.dart';
 import 'package:vida_leve/utils/appbar.dart';
 import 'package:vida_leve/utils/drawer.dart';
 import 'package:vida_leve/utils/global.dart';
@@ -8,13 +6,17 @@ import 'package:vida_leve/utils/global.dart';
 import '../utils/dados.dart';
 
 class Pacientes extends StatefulWidget {
+  const Pacientes({super.key});
+
   @override
   _PacientesState createState() => _PacientesState();
 }
 
 class _PacientesState extends State<Pacientes> {
-  TextEditingController _searchController =
+  final TextEditingController _searchController =
       TextEditingController(); // Novo controller
+
+  @override
 
   void initState() {
     super.initState();
@@ -46,8 +48,8 @@ class _PacientesState extends State<Pacientes> {
   Widget build(BuildContext context) {
     
     return Scaffold(
-      endDrawer: MyDrawer(),
-      appBar: MyAppBar(),
+      endDrawer: const MyDrawer(),
+      appBar: const MyAppBar(),
       body: Column(
         children: [
           Padding(
@@ -112,48 +114,43 @@ class _PacientesState extends State<Pacientes> {
                     Globals.pacienteId =
                         int.parse(filteredPacientes[index]['id']);
                   },
-                  child: Container(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 8, horizontal: 16),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: 64,
-                            height: 64,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: NetworkImage(filteredPacientes[index]
-                                        ['foto']
-                                    .toString()),
-                              ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 8, horizontal: 16),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: 64,
+                          height: 64,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(filteredPacientes[index]
+                                      ['foto']
+                                  .toString()),
                             ),
                           ),
-                          SizedBox(width: 16),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                filteredPacientes[index]['nomeCompleto']
-                                    .toString(),
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(height: 8),
-                              Text(
-                                filteredPacientes[index]['idade'].toString() +
-                                    ' Anos - ' +
-                                    filteredPacientes[index]['dataNascimento']
-                                        .toString(),
-                                style: TextStyle(fontSize: 16),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
+                        ),
+                        const SizedBox(width: 16),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              filteredPacientes[index]['nomeCompleto']
+                                  .toString(),
+                              style: const TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.bold),
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              '${filteredPacientes[index]['idade']} Anos - ${filteredPacientes[index]['dataNascimento']}',
+                              style: const TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 );

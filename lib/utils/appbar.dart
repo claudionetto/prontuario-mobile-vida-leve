@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const MyAppBar({Key? key,}) : super(key: key);
+  final bool showBackButton;
+
+  const MyAppBar({Key? key, this.showBackButton = false}) : super(key: key);
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
+      leading: showBackButton
+          ? IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            )
+          : null,
       title: GestureDetector(
         onTap: () {
           Navigator.pushReplacementNamed(context, "/home");

@@ -67,7 +67,7 @@ class MyDrawer extends StatelessWidget {
               Navigator.pushReplacementNamed(context, "/calendario");
             },
           ),
-          Expanded(child: SizedBox()),
+          const Expanded(child: SizedBox()),
           ListTile(
             leading: const Icon(Icons.logout, color: Color(0xFF00A896)),
             title: const Text("Logout",

@@ -6,6 +6,8 @@ import 'package:vida_leve/utils/drawer.dart';
 import 'package:vida_leve/utils/global.dart';
 
 class CadastroConsulta extends StatefulWidget {
+  const CadastroConsulta({super.key});
+
   @override
   _CadastroConsultaPage createState() => _CadastroConsultaPage();
 }
@@ -25,36 +27,36 @@ class _CadastroConsultaPage extends State<CadastroConsulta> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: MyDrawer(),
-      appBar: MyAppBar(),
+      endDrawer: const MyDrawer(),
+      appBar: const MyAppBar(),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
                             Text(
                 Globals.diaSelecionado
-                      ,style: TextStyle(
+                      ,style: const TextStyle(
                           fontSize: 24.0,
                           fontWeight: FontWeight.bold,
                           fontFamily: "Poppins",
                           ),
               ),
-              SizedBox(height: 20.0),
+              const SizedBox(height: 20.0),
               CircleAvatar(
                 backgroundImage:
                     NetworkImage(dados[selectedPacienteId]['foto'].toString()),
                 radius: 50,
               ),
-              SizedBox(height: 25.0),
-              Text(
+              const SizedBox(height: 25.0),
+              const Text(
                 'Selecione um paciente:', style: TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.bold,
                           fontFamily: "Poppins",
                           ),
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               DropdownButtonFormField<int>(
                 value: selectedPacienteId,
                 items: dados.map((paciente) {
@@ -76,14 +78,14 @@ class _CadastroConsultaPage extends State<CadastroConsulta> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'Horário da consulta: ',style: TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.bold,
                           fontFamily: "Poppins",)
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               TextField(
                 onChanged: (value) {
                   setState(() {
@@ -98,14 +100,14 @@ class _CadastroConsultaPage extends State<CadastroConsulta> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'Descrição da consulta:',style: TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.bold,
                           fontFamily: "Poppins",)
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               TextField(
                 onChanged: (value) {
                   setState(() {
@@ -120,7 +122,7 @@ class _CadastroConsultaPage extends State<CadastroConsulta> {
                   ),
                 ),
               ),
-              Expanded(child: SizedBox()),
+              const Expanded(child: SizedBox()),
               SizedBox(
                 width: double.infinity,
                 height: 50,

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:vida_leve/utils/global.dart';
 
 import '../utils/appbar.dart';
@@ -115,11 +113,11 @@ class _AnamneseNutricaoPageState extends State<AnamneseNutricaoPage> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             backgroundColor: Colors.green,
-            content: Text(
+            content: const Text(
               'Atualizações feitas',
               textAlign: TextAlign.center,
             ),
-            duration: Duration(seconds: 3),
+            duration: const Duration(seconds: 3),
             action: SnackBarAction(
               label: 'X',
               textColor: Colors.white,
@@ -142,8 +140,8 @@ class _AnamneseNutricaoPageState extends State<AnamneseNutricaoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: MyDrawer(),
-      appBar: MyAppBar(),
+      endDrawer: const MyDrawer(),
+      appBar: const MyAppBar(),
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
@@ -155,23 +153,23 @@ class _AnamneseNutricaoPageState extends State<AnamneseNutricaoPage> {
                   backgroundImage:
                       NetworkImage(dados[pacienteId]['foto'].toString()),
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 Text(
                   dados[pacienteId]['nomeCompleto'].toString(),
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.w900,
                     fontFamily: "Poppins",
                   ),
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 Container(
                   decoration: BoxDecoration(
-                    color: Color(0xFF0C8E09)
+                    color: const Color(0xFF0C8E09)
                         .withOpacity(0.4), // Define o raio para as bordas
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
+                  child: const Padding(
+                    padding: EdgeInsets.all(10.0),
                     child: Row(
                       children: [
                         Icon(
@@ -198,14 +196,14 @@ class _AnamneseNutricaoPageState extends State<AnamneseNutricaoPage> {
                   padding: const EdgeInsets.only(top: 20),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Color(0xFFF7F5FF).withOpacity(0.95),
+                      color: const Color(0xFFF7F5FF).withOpacity(0.95),
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
                           spreadRadius: 2,
                           blurRadius: 5,
-                          offset: Offset(0, 3),
+                          offset: const Offset(0, 3),
                         ),
                       ],
                     ),
@@ -447,7 +445,8 @@ class _AnamneseNutricaoPageState extends State<AnamneseNutricaoPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _toggleEditing,
-        child: Globals.isEditing ? Icon(Icons.save) : Icon(Icons.edit),
+        child:
+            Globals.isEditing ? const Icon(Icons.save) : const Icon(Icons.edit),
       ),
     );
   }

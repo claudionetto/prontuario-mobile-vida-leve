@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:vida_leve/pages/anamnese_geral.dart';
 import 'package:vida_leve/utils/customtextfield.dart';
 import 'package:vida_leve/utils/dados.dart';
 import 'package:vida_leve/utils/drawer.dart';
@@ -68,11 +65,11 @@ class _PerfilPacienteState extends State<PerfilPaciente> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             backgroundColor: Colors.green,
-            content: Text(
+            content: const Text(
               'Atualizações feitas',
               textAlign: TextAlign.center,
             ),
-            duration: Duration(seconds: 3),
+            duration: const Duration(seconds: 3),
             action: SnackBarAction(
               label: 'X',
               textColor: Colors.white,
@@ -95,8 +92,8 @@ class _PerfilPacienteState extends State<PerfilPaciente> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        endDrawer: MyDrawer(),
-        appBar: MyAppBar(),
+        endDrawer: const MyDrawer(),
+        appBar: const MyAppBar(),
         body: SingleChildScrollView(
           child: Center(
             child: Padding(
@@ -106,18 +103,18 @@ class _PerfilPacienteState extends State<PerfilPaciente> {
                     radius: 45, // Define o raio do avatar
                     backgroundImage:
                         NetworkImage(dados[pacienteId]['foto'].toString())),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 Text(
                   dados[pacienteId]['nomeCompleto'].toString(),
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.w900,
                     fontFamily: 'Poppins',
                   ),
                 ),
-                SizedBox(height: 15),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
+                const SizedBox(height: 15),
+                const Padding(
+                  padding: EdgeInsets.all(16.0),
                   child: Text(
                     'Informações Pessoais',
                     style: TextStyle(
@@ -230,8 +227,8 @@ class _PerfilPacienteState extends State<PerfilPaciente> {
                   controller: profissaoController,
                   initialValue: getInitialValue(dados[pacienteId], 'profissao'),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
+                const Padding(
+                  padding: EdgeInsets.all(16.0),
                   child: Text(
                     'Informações de contato',
                     style: TextStyle(
@@ -284,7 +281,7 @@ class _PerfilPacienteState extends State<PerfilPaciente> {
         ),
       floatingActionButton: FloatingActionButton(
         onPressed: _toggleEditing,
-        child: Globals.isEditing ? Icon(Icons.save) : Icon(Icons.edit),
+        child: Globals.isEditing ? const Icon(Icons.save) : const Icon(Icons.edit),
       ),);
   }
 }

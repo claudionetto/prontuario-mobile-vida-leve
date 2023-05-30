@@ -78,8 +78,8 @@ class _CalendarPageState extends State<CalendarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: MyDrawer(),
-      appBar: MyAppBar(),
+      endDrawer: const MyDrawer(),
+      appBar: const MyAppBar(),
       body: Column(
         children: [
           TableCalendar(
@@ -122,7 +122,7 @@ class _CalendarPageState extends State<CalendarPage> {
                 size: 24,
                 color: Color(0xFF00A896),
               ),
-              headerPadding: EdgeInsets.all(20),
+              headerPadding: const EdgeInsets.all(20),
               formatButtonVisible: true,
               formatButtonShowsNext: false,
               formatButtonDecoration: BoxDecoration(

@@ -3,7 +3,6 @@ import 'package:vida_leve/utils/appbar.dart';
 import 'package:vida_leve/utils/drawer.dart';
 import 'package:vida_leve/utils/dados_agenda.dart';
 import 'package:intl/intl.dart';
-import 'package:vida_leve/pages/pacientes.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -16,15 +15,15 @@ class HomePage extends StatelessWidget {
       return dataA.compareTo(dataB);
     });
     return Scaffold(
-      endDrawer: MyDrawer(),
-      appBar: MyAppBar(),
+      endDrawer: const MyDrawer(),
+      appBar: const MyAppBar(),
       body: Padding(
         padding: const EdgeInsets.all(18.0),
         child: Column(children: [
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 'Agenda Semanal',
                 style: TextStyle(
                   fontSize: 30.0,
@@ -62,13 +61,13 @@ class HomePage extends StatelessWidget {
 
                     Color cor;
                     if (diferencaDias < 0) {
-                      cor = Color(0xFFE78F8F);
+                      cor = const Color(0xFFE78F8F);
                     } else if (diferencaDias == 0) {
-                      cor = Color(0xFF03C7B3);
+                      cor = const Color(0xFF03C7B3);
                     } else if (diferencaDias >= 1 && diferencaDias <= 3) {
-                      cor = Color(0xFF088EC4); // Próximos 2 dias
+                      cor = const Color(0xFF088EC4); // Próximos 2 dias
                     } else {
-                      cor = Color(0xFF05668D); // Depois de 2 dias
+                      cor = const Color(0xFF05668D); // Depois de 2 dias
                     }
 
                     return Container(

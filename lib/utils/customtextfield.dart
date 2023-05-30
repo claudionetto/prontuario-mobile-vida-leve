@@ -36,15 +36,15 @@ class _CustomTextFieldState extends State<CustomTextField> {
         decoration: InputDecoration(
           floatingLabelBehavior: FloatingLabelBehavior.always,
           labelText: widget.labelText,
-          labelStyle: TextStyle(color: Color(0xFF00A896)),
+          labelStyle: const TextStyle(color: Color(0xFF00A896)),
           fillColor: Colors.white,
           filled: true,
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFF00A896)),
+            borderSide: const BorderSide(color: Color(0xFF00A896)),
             borderRadius: BorderRadius.circular(10),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFF00A896), width: 2.0),
+            borderSide: const BorderSide(color: Color(0xFF00A896), width: 2.0),
             borderRadius: BorderRadius.circular(10),
           ),
           focusColor: Colors.white,
