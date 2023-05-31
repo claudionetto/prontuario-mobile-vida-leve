@@ -60,7 +60,7 @@ class _AnamnesePageState extends State<AnamnesePage> {
                             borderRadius: BorderRadius.circular(
                                 10), // Define o raio para as bordas
                           ),
-                          child: const Column(
+                          child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(
@@ -89,7 +89,7 @@ class _AnamnesePageState extends State<AnamnesePage> {
                             borderRadius: BorderRadius.circular(
                                 10), // Define o raio para as bordas
                           ),
-                          child: const Column(
+                          child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(
@@ -125,7 +125,7 @@ class _AnamnesePageState extends State<AnamnesePage> {
                             borderRadius: BorderRadius.circular(
                                 10), // Define o raio para as bordas
                           ),
-                          child: const Column(
+                          child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(
@@ -154,7 +154,7 @@ class _AnamnesePageState extends State<AnamnesePage> {
                             borderRadius: BorderRadius.circular(
                                 10), // Define o raio para as bordas
                           ),
-                          child: const Column(
+                          child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(
@@ -191,7 +191,7 @@ class _AnamnesePageState extends State<AnamnesePage> {
                             borderRadius: BorderRadius.circular(
                                 10), // Define o raio para as bordas
                           ),
-                          child: const Column(
+                          child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(

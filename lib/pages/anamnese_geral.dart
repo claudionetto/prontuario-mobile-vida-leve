@@ -195,7 +195,7 @@ class _AnamneseGeralPageState extends State<AnamneseGeralPage> {
                     color: const Color(0xFF00A896)
                         .withOpacity(0.4), // Define o raio para as bordas
                   ),
-                  child: const Padding(
+                  child: Padding(
                     padding: EdgeInsets.all(10.0),
                     child: Row(
                       children: [
@@ -350,7 +350,7 @@ class _AnamneseGeralPageState extends State<AnamneseGeralPage> {
                             labelText: "Hábitos",
                             controller: habitosController,
                             initialValue:
-                                getInitialValue(dados[pacienteId], 'Hábitos'),
+                                getInitialValue(dados[pacienteId], 'habitos'),
                           ),
                           CustomTextField(
                             labelText: "Renda Familiar",
