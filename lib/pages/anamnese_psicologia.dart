@@ -195,7 +195,7 @@ class _AnamnesePsicologiaPageState extends State<AnamnesePsicologiaPage> {
                     color: const Color(0xFF2764FF)
                         .withOpacity(0.4), // Define o raio para as bordas
                   ),
-                  child: Padding(
+                  child: const Padding(
                     padding: EdgeInsets.all(10.0),
                     child: Row(
                       children: [

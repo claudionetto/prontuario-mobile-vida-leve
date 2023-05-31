@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:vida_leve/models/login_controller.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -9,106 +9,121 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String email = '';
-  String senha = '';
+  late final controller = LoginController(() {
+    Navigator.pushReplacementNamed(context, "/home");
+  }, () {
+    setState(() {});
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(0, 168, 150, 100),
       body: SingleChildScrollView(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(50.0),
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              const Image(
-                height: 170.0,
-                width: 170.0,
-                image: AssetImage('images/logo_vidaleve.png'),
-              ),
-              const SizedBox(height: 10.0),
-              const Text(
-                'VIDA LEVE',
-                style: TextStyle(
-                  fontSize: 40.0,
-                  color: Colors.white,
-                  fontFamily: 'Montserrat',
+        child: Padding(
+          padding: const EdgeInsets.all(32),
+          child: Form(
+            key: controller.formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(height: 30.0),
+                const Image(
+                  height: 170.0,
+                  width: 170.0,
+                  image: AssetImage('images/logo_vidaleve.png'),
                 ),
-              ),
-              const SizedBox(height: 20.0),
-              const Text(
-                'Entrar',
-                style: TextStyle(
-                    fontSize: 30.0,
+                const SizedBox(height: 10.0),
+                const Text(
+                  'VIDA LEVE',
+                  style: TextStyle(
+                    fontSize: 40.0,
                     color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Poppins'),
-              ),
-              const SizedBox(height: 20.0),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
-                    ' Digite seu email:',
-                    style: TextStyle(fontSize: 20.0, color: Colors.white),
+                    fontFamily: 'Montserrat',
                   ),
-                ],
-              ),
-              const SizedBox(height: 5.0),
-              TextField(
-                onChanged: (text) {
-                  email = text;
-                },
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                    fillColor: Colors.white,
-                    filled: true,
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10))),
-              ),
-              const SizedBox(height: 10.0),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
-                    ' Digite sua senha:',
-                    style: TextStyle(fontSize: 20.0, color: Colors.white),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 5.0),
-              Container(
-                child: TextField(
-                  onChanged: (text) {
-                    senha = text;
+                ),
+                const SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
+                const Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      ' Digite seu email:',
+                      style: TextStyle(fontSize: 20.0, color: Colors.white),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 5.0),
+                TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                      fillColor: Colors.white,
+                      filled: true,
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10))),
+                  validator: (value) => controller.validateEmail(value),
+                  onSaved: (value) => controller.email = value!,
+                  onTap: () {
+                    controller.clearError();
                   },
+                ),
+                const SizedBox(height: 10.0),
+                const Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      ' Digite sua senha:',
+                      style: TextStyle(fontSize: 20.0, color: Colors.white),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 5.0),
+                TextFormField(
                   obscureText: true,
                   decoration: InputDecoration(
                       fillColor: Colors.white,
                       filled: true,
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10))),
-                ),
-              ),
-              const SizedBox(height: 30),
-              SizedBox(
-                height: 50.0,
-                width: 200.0,
-                child: FilledButton(
-                  onPressed: () {
-                    if (email == 'teste@teste.com' && senha == 'teste123') {
-                      Navigator.pushReplacementNamed(context, "/home");
-                    }
+                  validator: (value) => controller.validatePassword(value),
+                  onSaved: (value) => controller.password = value!,
+                  onTap: () {
+                    controller.clearError();
                   },
-                  child: const Text('Login',
-                      style: TextStyle(
+                ),
+                const SizedBox(height: 20),
+                if (controller.error.isNotEmpty)
+                  Text(
+                    controller.error,
+                    style: const TextStyle(
+                      color: Colors.red,
+                      fontSize: 20.0,
+                    ),
+                  ),
+                const SizedBox(height: 20),
+                if (controller.isLoading)
+                  const CircularProgressIndicator()
+                else
+                  SizedBox(
+                    height: 50.0,
+                    width: 200.0,
+                    child: FilledButton(
+                        onPressed: () {
+                          if (controller.validate()) {
+                            controller.clearError();
+                            controller.login();
+                          }
+                        },
+                        child: const Text(
+                          "Login",
+                          style: TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.bold,
-                          fontFamily: "Poppins"),),
-                ),
-              ),
-            ]),
+                          fontFamily: "Poppins"),
+                        )),
+                  )
+              ],
+            ),
           ),
         ),
       ),

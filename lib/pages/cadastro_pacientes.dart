@@ -47,7 +47,7 @@ class _CadastroPacientesState extends State<CadastroPacientes> {
         child: Column(
           children: [
             const SizedBox(height: 50),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(

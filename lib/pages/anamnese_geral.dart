@@ -195,7 +195,7 @@ class _AnamneseGeralPageState extends State<AnamneseGeralPage> {
                     color: const Color(0xFF00A896)
                         .withOpacity(0.4), // Define o raio para as bordas
                   ),
-                  child: Padding(
+                  child: const Padding(
                     padding: EdgeInsets.all(10.0),
                     child: Row(
                       children: [

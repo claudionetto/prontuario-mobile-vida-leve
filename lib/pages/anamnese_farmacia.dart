@@ -195,7 +195,7 @@ class _AnamneseFarmaciaPageState extends State<AnamneseFarmaciaPage> {
                     color: const Color(0xFFFAFF00)
                         .withOpacity(0.4), // Define o raio para as bordas
                   ),
-                  child: Padding(
+                  child: const Padding(
                     padding: EdgeInsets.all(10.0),
                     child: Row(
                       children: [

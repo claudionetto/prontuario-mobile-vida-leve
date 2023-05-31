@@ -12,10 +12,13 @@ import 'package:vida_leve/pages/cadastro_consulta.dart';
 import 'package:vida_leve/pages/pacientes.dart';
 import 'package:vida_leve/pages/perfil_paciente_page.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'pages/home_page.dart';
 
 void main() async {
+      WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   initializeDateFormatting().then((_) => runApp(const MyApp()));
 }
 

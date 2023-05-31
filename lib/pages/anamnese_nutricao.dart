@@ -168,7 +168,7 @@ class _AnamneseNutricaoPageState extends State<AnamneseNutricaoPage> {
                     color: const Color(0xFF0C8E09)
                         .withOpacity(0.4), // Define o raio para as bordas
                   ),
-                  child: Padding(
+                  child: const Padding(
                     padding: EdgeInsets.all(10.0),
                     child: Row(
                       children: [

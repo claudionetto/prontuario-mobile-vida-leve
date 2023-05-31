@@ -195,7 +195,7 @@ class _AnamneseEducacaoFisicaPageState extends State<AnamneseEducacaoFisicaPage>
                     color: const Color(0xFF00FF19)
                         .withOpacity(0.4), // Define o raio para as bordas
                   ),
-                  child: Padding(
+                  child: const Padding(
                     padding: EdgeInsets.all(10.0),
                     child: Row(
                       children: [
