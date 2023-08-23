@@ -1,16 +1,21 @@
-# vida_leve
+# Vida Leve
 
-A new Flutter project.
+## Objetivo
 
-## Getting Started
+ Um Prontuário Eletrônico Mobile criado para a iniciativa Vida Leve, desenvolvido durante um Projeto Empresarial na Faculdade UNIFEOB.
+ Possui um sistema de Login Integrado com o Firebase, o restante foi feito localmente para testes.
 
-This project is a starting point for a Flutter application.
+## Ferramentas
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter
+- Firebase
+- Figma
+- Visual Studio Code
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Outros/Links
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Download Aplicativo: https://drive.google.com/file/d/1ZI3VGORHh_4o77GKouOLUr5an3yDY0Dt/view
+- Login: teste@gmail.com - Senha: teste123
+- Documentação do Projeto: https://docs.google.com/document/d/1TqqQrQIoTthdwFMyBxbFIxE7F-pbQbPOawNnDTdBafQ/edit?pli=1
+
+
